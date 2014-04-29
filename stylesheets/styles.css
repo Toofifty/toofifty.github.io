@@ -580,13 +580,13 @@ h3 {
 }
 
 a {
-  color: #5288DB;
+  color: #2B5F7E;
   font-weight: 400;
   text-decoration: none;
 }
 a:hover {
-  color: #ffeb9b;
-  text-shadow: 1px 1px #5288DB;
+  color: #6998B4;
+  text-shadow: 1px 1px #2B5F7E;
 }
 
 a small {
@@ -728,13 +728,13 @@ dt {
 }
 #header nav li a {
   color: white;
-  border: 1px solid #01243B;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #C5C5C5), color-stop(100%, #5288DB));
-  background: -webkit-linear-gradient(#C5C5C5, #5288DB);
-  background: -moz-linear-gradient(#C5C5C5, #5288DB);
-  background: -o-linear-gradient(#C5C5C5, #5288DB);
-  background: -ms-linear-gradient(#C5C5C5, #5288DB);
-  background: linear-gradient(#C5C5C5, #5288DB);
+  border: 1px solid #13405B;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5691B4), color-stop(100%, #2B5F7E));
+  background: -webkit-linear-gradient(#5691B4, #2B5F7E);
+  background: -moz-linear-gradient(#5691B4, #2B5F7E);
+  background: -o-linear-gradient(#5691B4, #2B5F7E);
+  background: -ms-linear-gradient(#5691B4, #2B5F7E);
+  background: linear-gradient(#5691B4, #2B5F7E);
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   -o-border-radius: 2px;
@@ -745,7 +745,7 @@ dt {
   -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7);
   -o-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7);
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 3px 7px rgba(0, 0, 0, 0.7);
-  background-color: #C5C5C5;
+  background-color: #2B5F7E;
   padding: 10px 12px;
   margin-top: 6px;
   line-height: 14px;
@@ -754,14 +754,14 @@ dt {
   text-align: center;
 }
 #header nav li a:hover {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5288DB), color-stop(100%, #66CCFF));
-  background: -webkit-linear-gradient(#5288DB, #66CCFF);
-  background: -moz-linear-gradient(#5288DB, #66CCFF);
-  background: -o-linear-gradient(#5288DB, #66CCFF);
-  background: -ms-linear-gradient(#5288DB, #66CCFF);
-  background: linear-gradient(#5288DB, #66CCFF);
-  background-color: #5288DB;
-  border: 1px solid #C5C5C5;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #305165), color-stop(100%, #2B5F7E));
+  background: -webkit-linear-gradient(#305165, #2B5F7E);
+  background: -moz-linear-gradient(#305165, #2B5F7E);
+  background: -o-linear-gradient(#305165, #2B5F7E);
+  background: -ms-linear-gradient(#305165, #2B5F7E);
+  background: linear-gradient(#305165, #2B5F7E);
+  background-color: #305165;
+  border: 1px solid #13405B;
   -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
   -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
   -o-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
