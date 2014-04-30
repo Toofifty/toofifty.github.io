@@ -695,6 +695,14 @@ dt {
   font-weight: normal;
 }
 
+#contact {
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
+  -o-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
+  border: 4px solid #434343;
+ }
+
 #header {
   z-index: 100;
   left: 0;
