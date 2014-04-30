@@ -1,4 +1,4 @@
 Toofifty.github.io
 ==================
 
-Personal website page [!Build Status]
+Personal website page
