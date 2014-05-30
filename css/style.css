@@ -102,7 +102,8 @@ a:hover {
 }
   
   .coda-slider-wrapper .coda-slider {
-    background: rgba(53, 53, 53, 0.75);
+    /*background: rgba(53, 53, 53, 0.25);*/
+    background: rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
     -o-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
@@ -170,22 +171,12 @@ a:hover {
     }
   
   .coda-slider-wrapper .coda-nav-left-arrow {
-    width: 25px;
-    height: 25px;
-    background: url(../img/arrow.png) no-repeat top left; 
-    margin-top:50px;
-	margin-left:10px;
-    
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -o-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
-    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
-    -o-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
+    width: 80px;
+    height: 80px;
+    background: url(../img/arrow2.png) no-repeat top left; 
+    margin-top:80px;
+    margin-left: 10px;
+    margin-right:20px;
   }
 
 .coda-slider-wrapper .coda-nav-left-arrow a {
@@ -195,26 +186,16 @@ a:hover {
   }
 
   .coda-slider-wrapper .coda-nav-left-arrow:hover {
-    background: url(../img/arrow.png) no-repeat bottom left; 
+    background: url(../img/arrow2.png) no-repeat bottom left; 
   }
   
   .coda-slider-wrapper .coda-nav-right-arrow {
-    width: 25px;
-    height: 25px;
-    background: url(../img/arrow.png) no-repeat top right; 
-    margin-top:50px;
-	margin-right:10px;
-    
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -o-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
-    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
-    -o-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
+    width: 80px;
+    height: 80px;
+    background: url(../img/arrow2.png) no-repeat top right; 
+    margin-top:80px;
+    margin-right:10px;
+    margin-left: 20px;
   }
 .coda-slider-wrapper .coda-nav-right-arrow a {
     width: 0;
@@ -225,7 +206,7 @@ a:hover {
   }
 
   .coda-slider-wrapper .coda-nav-right-arrow:hover {
-    background: url(../img/arrow.png) no-repeat bottom right; 
+    background: url(../img/arrow2.png) no-repeat bottom right; 
   }
 
   .coda-slider-wrapper .coda-nav-left-arrow:active, .coda-slider-wrapper .coda-nav-right-arrow:active {
