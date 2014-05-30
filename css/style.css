@@ -135,7 +135,7 @@ a:hover {
     }
     
     .coda-slider-wrapper .coda-nav a {
-      opacity: 0.5;
+      opacity: 0.25;
       text-shadow: 0px 0px #000;
       background: #6998B4;
       color: #fff;
@@ -210,7 +210,7 @@ a:hover {
   }
 
   .coda-slider-wrapper .coda-nav-left-arrow:active, .coda-slider-wrapper .coda-nav-right-arrow:active {
-    margin-top: 55px; 
+    margin-top: 80px; 
   }
   
   .coda-slider-wrapper .loading {
