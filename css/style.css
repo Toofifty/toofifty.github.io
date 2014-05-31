@@ -128,8 +128,8 @@ a:hover {
   }
     
     .coda-slider-wrapper .coda-nav .current {
-      /*background: rgba(50, 50, 50, 0.25);*/
-      background: linear-gradient(rgba(105, 152, 180, .25), rgba(0, 0, 0, 0));
+      /*background: rgba(105, 152, 180, .25);*/
+      background: linear-gradient(rgba(50, 50, 50, 0.25), rgba(0, 0, 0, 0));
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       color: #fff;
@@ -184,12 +184,12 @@ a:hover {
     }
   
   .coda-slider-wrapper .coda-nav-left-arrow {
-    width: 80px;
-    height: 80px;
-    background: url(../img/arrow2.png) no-repeat top left; 
+    width: 40px;
+    height: 40px;
+    background: url(../img/arrow4.png) no-repeat top left; 
     margin-top:80px;
     margin-left: 10px;
-    margin-right:20px;
+    margin-right:10px;
   }
 
 .coda-slider-wrapper .coda-nav-left-arrow a {
@@ -199,16 +199,16 @@ a:hover {
   }
 
   .coda-slider-wrapper .coda-nav-left-arrow:hover {
-    background: url(../img/arrow2.png) no-repeat bottom left; 
+    background: url(../img/arrow4.png) no-repeat bottom left; 
   }
   
   .coda-slider-wrapper .coda-nav-right-arrow {
-    width: 80px;
-    height: 80px;
-    background: url(../img/arrow2.png) no-repeat top right; 
+    width: 40px;
+    height: 40px;
+    background: url(../img/arrow4.png) no-repeat top right; 
     margin-top:80px;
     margin-right:10px;
-    margin-left: 20px;
+    margin-left: 10px;
   }
 .coda-slider-wrapper .coda-nav-right-arrow a {
     width: 0;
@@ -219,7 +219,7 @@ a:hover {
   }
 
   .coda-slider-wrapper .coda-nav-right-arrow:hover {
-    background: url(../img/arrow2.png) no-repeat bottom right; 
+    background: url(../img/arrow4.png) no-repeat bottom right; 
   }
 
   .coda-slider-wrapper .coda-nav-left-arrow:active, .coda-slider-wrapper .coda-nav-right-arrow:active {
