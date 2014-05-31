@@ -66,6 +66,31 @@ li {
   z-index: -1;
 }
 
+.middlefoot {
+  background: #000;
+  color: #f0e7d5;
+  font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-right: auto;
+  margin-left: auto;
+  height: 90%;
+  bottom: 90%;
+  width: 144px;
+  z-index: -1;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.middlefoot:hover {
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
 .overlay {
   position: fixed;
   width: 100%;
@@ -76,6 +101,29 @@ li {
   background: url(../img/bg.jpg) repeat #353535;
   /*background-size: 100% 100%;*/
   background-repeat: no-repeat;
+}
+
+.enlarge-image {  
+  float: left;
+  opacity: .75;
+  width: 48px;
+  height: 48px;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+  display: inline;
+}
+
+.enlarge-image:hover {
+  opacity: 1;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+  display: inline;
 }
 
 body {
@@ -186,7 +234,7 @@ a:hover {
   .coda-slider-wrapper .coda-nav-left-arrow {
     width: 40px;
     height: 40px;
-    background: url(../img/arrow4.png) no-repeat top left; 
+    background: url(../img/arrow.png) no-repeat top left; 
     margin-top:80px;
     margin-left: 10px;
     margin-right:10px;
@@ -199,13 +247,13 @@ a:hover {
   }
 
   .coda-slider-wrapper .coda-nav-left-arrow:hover {
-    background: url(../img/arrow4.png) no-repeat bottom left; 
+    background: url(../img/arrow.png) no-repeat bottom left; 
   }
   
   .coda-slider-wrapper .coda-nav-right-arrow {
     width: 40px;
     height: 40px;
-    background: url(../img/arrow4.png) no-repeat top right; 
+    background: url(../img/arrow.png) no-repeat top right; 
     margin-top:80px;
     margin-right:10px;
     margin-left: 10px;
@@ -219,7 +267,7 @@ a:hover {
   }
 
   .coda-slider-wrapper .coda-nav-right-arrow:hover {
-    background: url(../img/arrow4.png) no-repeat bottom right; 
+    background: url(../img/arrow.png) no-repeat bottom right; 
   }
 
   .coda-slider-wrapper .coda-nav-left-arrow:active, .coda-slider-wrapper .coda-nav-right-arrow:active {
