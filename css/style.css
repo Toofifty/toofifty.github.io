@@ -1,108 +1,66 @@
-/***********************************************************************
-  jQuery Coda-Slider v3.0 - kevinbatdorf.github.com/codaslider
-  Copyright (c) 2012 Kevin Batdorf
-  This plugin available for use in all personal or commercial projects under both MIT and GPL licenses.
-************************************************************************/
-/********************************************
-SASS stylesheet.
-
-No idea what CSS preprocessing is all about? No problem... just use the style.css file instead.
-If you want to learn more, check out this article by Chris Coyier
-
-css-tricks.com/musings-on-preprocessing/
-
-********************************************/
-
-
-  
 a {
   color: #5691B4;
   font-weight: 400;
   text-decoration: none;
-    -o-transition:.5s;
-    -ms-transition:.5s;
-    -moz-transition:.5s;
-    -webkit-transition:.5s;
-    transition:.5s;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
   text-shadow: 1px 1px #000;
 }
-
-  
-p {
-  color:#f0e7d5;
-}
-
 h2 {
   color: #5691B4;
   font-family: "Lobster", cursive;
   font-size: 50px;
   text-align: center;
 }
-
 li {
   color:#f0e7d5;
 }
-
-.leftfoot {
+body {
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+  color:#f0e7d5;
+}
+.footers {
   opacity: 0.7;
-  color: #f0e7d5;
   font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  position: fixed;
+  z-index: -1;
+}
+.footers .left {
   left: 0px;
-  bottom: 0px;
   margin-left: 10px;
   width: 100%;
-  z-index: -1;
-}
-
-.rightfoot {
-  opacity: 0.7;
-  color: #f0e7d5;
-  font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: fixed;
-  right: 0px;
   bottom: 0px;
-  margin-right: 10px;
-  z-index: -1;
 }
-
-.middlefoot {
-  background: #000;
-  color: #f0e7d5;
-  font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+.footers .right {
+  right: 0px;
+  margin-right: 10px;
+  position: fixed;
+  bottom: 0px;
+}
+.footers .middle {
   margin-right: auto;
   margin-left: auto;
-  height: 90%;
-  bottom: 90%;
   width: 144px;
-  z-index: -1;
   -o-transition:.5s;
   -ms-transition:.5s;
   -moz-transition:.5s;
   -webkit-transition:.5s;
   transition:.5s;
 }
-
-.middlefoot:hover {
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  transition:.5s;
-}
-
 .overlay {
   position: fixed;
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  z-index: -99999;
+  z-index: -99;
   background: url(../img/bg.jpg) repeat #353535;
-  /*background-size: 100% 100%;*/
-  background-repeat: no-repeat;
 }
-
 .enlarge-image {  
   float: left;
   opacity: .75;
@@ -113,9 +71,7 @@ li {
   -moz-transition:.5s;
   -webkit-transition:.5s;
   transition:.5s;
-  display: inline;
 }
-
 .enlarge-image:hover {
   opacity: 1;
   -o-transition:.5s;
@@ -123,33 +79,18 @@ li {
   -moz-transition:.5s;
   -webkit-transition:.5s;
   transition:.5s;
-  display: inline;
 }
-
-body {
-  height: 100%;
-  margin: 0;
-  min-height: 100%;
-}
-
-.contact {
-  border: 4px solid #434343;
-}
-
 a:hover {
   color: #6998B4;
   text-shadow: 1px 1px #2B5F7E;
 }
-
 .coda-slider-wrapper {
   padding: 10% 0; 
   font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-left: auto;
   margin-right: auto;
 }
-  
   .coda-slider-wrapper .coda-slider {
-    /*background: rgba(53, 53, 53, 0.25);*/
     background: rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
@@ -163,18 +104,14 @@ a:hover {
     -khtml-border-radius: 20px;
     border-radius: 20px;
   }
-    
     .coda-slider-wrapper .coda-slider .panel {
       width: 700px; 
     }
-      
       .coda-slider-wrapper .coda-slider .panel .panel-wrapper {
         padding: 0 20px; 
       }
-  
   .coda-slider-wrapper .coda-nav {
   }
-    
     .coda-slider-wrapper .coda-nav .current {
       /*background: rgba(105, 152, 180, .25);*/
       background: linear-gradient(rgba(50, 50, 50, 0.25), rgba(0, 0, 0, 0));
@@ -190,7 +127,6 @@ a:hover {
       -webkit-transition:.5s;
       transition:.5s;
     }
-    
     .coda-slider-wrapper .coda-nav a {
       opacity: 0.25;
       text-shadow: 0px 0px #000;
@@ -206,7 +142,6 @@ a:hover {
       -webkit-transition:.5s;
       transition:.5s;
     }
-    
     .coda-slider-wrapper .coda-nav a:hover {
       opacity: 1;
       /*background: #5691B4;*/
@@ -220,17 +155,14 @@ a:hover {
       -webkit-transition:.5s;
       transition:.5s;
     }
-  
   .coda-slider-wrapper .coda-nav-left, .coda-slider-wrapper .coda-nav-right {
   }
-    
     .coda-slider-wrapper .coda-nav-left a, .coda-slider-wrapper .coda-nav-right a {
       background: #000;
       color: #fff;
       padding: 5px;
       width: 100px; 
     }
-  
   .coda-slider-wrapper .coda-nav-left-arrow {
     width: 40px;
     height: 40px;
@@ -239,17 +171,14 @@ a:hover {
     margin-left: 10px;
     margin-right:10px;
   }
-
 .coda-slider-wrapper .coda-nav-left-arrow a {
     width: 0;
     height: 0;
     border:none;
   }
-
   .coda-slider-wrapper .coda-nav-left-arrow:hover {
     background: url(../img/arrow.png) no-repeat bottom left; 
   }
-  
   .coda-slider-wrapper .coda-nav-right-arrow {
     width: 40px;
     height: 40px;
@@ -265,52 +194,38 @@ a:hover {
     margin-top:0;
     border:none;
   }
-
   .coda-slider-wrapper .coda-nav-right-arrow:hover {
     background: url(../img/arrow.png) no-repeat bottom right; 
   }
-
   .coda-slider-wrapper .coda-nav-left-arrow:active, .coda-slider-wrapper .coda-nav-right-arrow:active {
     margin-top: 80px; 
   }
-  
   .coda-slider-wrapper .loading {
     height: 100%;
     padding: 20px;
     text-align: center; 
   }
-
 .arrows .coda-slider {
   margin: 0 10px; 
 }
-
-
-
-
-
 .coda-slider-wrapper {
   clear: both;
   overflow: auto; 
 }
-  
   .coda-slider-wrapper .coda-slider {
     float: left;
     overflow: hidden;
     position: relative; 
   }
-    
     .coda-slider-wrapper .coda-slider .panel-container {
       position: relative; 
     }
-      
       .coda-slider-wrapper .coda-slider .panel-container .panel {
         display: block;
         float: left; 
       }
-  
   .coda-slider-wrapper .coda-nav {
   }
-    
     .coda-slider-wrapper .coda-nav ul {
       padding:0;
       clear: both;
@@ -319,36 +234,29 @@ a:hover {
       overflow: hidden; 
       width:1000px;
     }
-      
       .coda-slider-wrapper .coda-nav ul li {
         display: inline; 
       }
-        
         .coda-slider-wrapper .coda-nav ul li a {
           display: block;
           float: left;
           text-decoration: none; 
         }
-  
   .coda-slider-wrapper .coda-nav-left-arrow, .coda-slider-wrapper .coda-nav-right-arrow {
     cursor: pointer;
     float: left;
   }
-    
     .coda-slider-wrapper .coda-nav-left-arrow a, .coda-slider-wrapper .coda-nav-right-arrow a {
       display: block; 
     }
-  
   .coda-slider-wrapper .coda-nav-left, .coda-slider-wrapper .coda-nav-right {
     float: left; 
   }
-    
     .coda-slider-wrapper .coda-nav-left a, .coda-slider-wrapper .coda-nav-right a {
       display: block;
       text-align: center;
       text-decoration: none; 
     }
-  
   .coda-slider-wrapper .coda-nav-left, .coda-slider-wrapper .coda-nav-left-arrow {
     clear: both; 
   }
