@@ -393,7 +393,7 @@ if ( typeof Object.create !== 'function' ) {
 		dynamicTabsPosition: "top",
 		externalTriggerSelector: "a.xtrig", //shouldnt need any more
 		firstPanelToLoad: 1,
-		hashLinking: true,
+		hashLinking: false,
 		panelTitleSelector: "h2.title",
 		slideEaseDuration: 1500,
 		slideEaseFunction: "easeInOutExpo"
