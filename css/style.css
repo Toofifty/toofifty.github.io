@@ -73,7 +73,7 @@ li {
   left: 0;
   top: 0;
   z-index: -99999;
-  background: url(../img/bg.jpg) #353535;
+  background: url(../img/bg.jpg) repeat #353535;
   /*background-size: 100% 100%;*/
   background-repeat: no-repeat;
 }
