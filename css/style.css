@@ -129,15 +129,27 @@ a:hover {
   }
     
     .coda-slider-wrapper .coda-nav .current {
-      background: #5691B4; 
-      color: #000;
+      /*background: rgba(50, 50, 50, 0.25);*/
+      background: linear-gradient(rgba(105, 152, 180, .25), rgba(0, 0, 0, 0));
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      color: #fff;
       opacity: 1;
+      padding-left: 20px;
+      padding-right: 20px;
+      -o-transition:.5s;
+      -ms-transition:.5s;
+      -moz-transition:.5s;
+      -webkit-transition:.5s;
+      transition:.5s;
     }
     
     .coda-slider-wrapper .coda-nav a {
       opacity: 0.25;
       text-shadow: 0px 0px #000;
-      background: #6998B4;
+      /*background: #6998B4;*/
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
       color: #fff;
       margin-right: 1px;
       padding: 3px 6px; 
@@ -150,7 +162,9 @@ a:hover {
     
     .coda-slider-wrapper .coda-nav a:hover {
       opacity: 1;
-      background: #5691B4;
+      /*background: #5691B4;*/
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
       color: #fff;
       text-shadow: none; 
       -o-transition:.5s;
@@ -256,6 +270,7 @@ a:hover {
       display: block;
       margin: auto;
       overflow: hidden; 
+      width:1000px;
     }
       
       .coda-slider-wrapper .coda-nav ul li {

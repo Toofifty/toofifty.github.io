@@ -168,7 +168,7 @@ if ( typeof Object.create !== 'function' ) {
 			else {
 				// Get total width of the navigation tabs and center it
 				$($(self.sliderId).parent()).find('.coda-nav li a').each(function(){self.totalNavWidth += $(this).outerWidth(true); });
-				$($(self.sliderId).parent()).find('.coda-nav ul').css('width', self.totalNavWidth + 1);
+				$($(self.sliderId).parent()).find('.coda-nav ul').css('width', self.totalNavWidth + 41);
 			}
 		},
 
