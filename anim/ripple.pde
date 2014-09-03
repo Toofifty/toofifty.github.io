@@ -1,5 +1,3 @@
-import processing.core.*;
-
 /**
   * Generation settings
   */
@@ -285,16 +283,16 @@ class Button {
   
   float x, y, w, h;
   int[] c, tc;
-  String text;
+  String t;
   boolean active = false;
   
-  Button (float xi, float yi, float wi, float hi, int[] ci, String texti, int[] tci, boolean a) {
+  Button (float xi, float yi, float wi, float hi, int[] ci, String ti, int[] tci, boolean a) {
     x = xi;
     y = yi;
     w = wi;
     h = hi;
     c = ci;
-    text = texti;
+    t = ti;
     tc = tci;
     active = a;
   }
@@ -319,7 +317,7 @@ class Button {
     }
     rect(x, y, w, h);
     fill(tc[0], tc[1], tc[2], 100);
-    text(text, x+5, y+17);
+    text(t, x+5, y+17);
   }
 }
 
