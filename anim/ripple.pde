@@ -11,7 +11,7 @@ int numPointsY = 10;
 float zHeight = 20;
 float maxZHeight = 20000; // Set super big for no max height
 float distanceDilate = 40; // Determines max height too, inverse relationship, do not make 0
-float spreadDilate = 40;
+float spreadDilate = 10;
 float whitespaceX = 400;
 float whitespaceY = 400;
 float antiSpike = 0.1; // Higher number reduces the huge spike in the centre, but makes all waves smaller
@@ -19,15 +19,35 @@ int alphaFade = 0; // Set to 255 to disable fading
 int heightDilate = 5;
 int fadeType = 1; // 0: Height-based, 1: Distance-based, 2: Random
 
-float maxDistance = distanceBetween(new float[]{(width-whitespaceX)/2,(height-whitespaceY)/2,0}, new float[]{whitespaceX/2, whitespaceY/2, 0});
-Point[] points = new Point[numPointsX * numPointsY];
+void updatebool (int var, boolean val) {
+  switch(var) {
+    case 0:
+      gridPoints = val;
+      break;
+    case 1:
+      topView = val;
+      break;
+    case 2:
+      randomColours = val;
+      break;
+  }
+}
+
+void updatefloat (int var, float val) {
+}
+
+void updateint (int var, int val) {
+  
+}
 
 void setup () {
   begin();
 }
 
 void begin () {
-  size(1920, 1080, P3D);
+  size(1080, 720, P3D);
+  points = new Point[numPointsX * numPointsY];
+  float maxDistance = distanceBetween(new float[]{(width-whitespaceX)/2,(height-whitespaceY)/2,0}, new float[]{whitespaceX/2, whitespaceY/2, 0});
   background(0);
   if (gridPoints) {
     for (int j = 0; j < numPointsY; j++) {
