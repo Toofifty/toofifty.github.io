@@ -6,20 +6,6 @@
 		<link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
 		<script type="text/javascript" src="./js/processing.js"></script>
 		<script type="text/javascript">
-		function reload(id) {
-			var pjs = Processing.getInstanceById(id);
-			pjs.begin();
-		}
-		
-		function updateBool(id) {
-			var pjs = Processing.getInstanceById(id);
-			var val = document.getElementById('gridPoints').value;
-			pjs.updatebool(0, val);
-			val = document.getElementById('topView').value;
-			pjs.updatebool(1, val);
-			val = document.getElementById('randomColours').value;
-			pjs.updatebool(2, val);
-		}
 		</script>
 		<style type="text/css">
 		<!--
