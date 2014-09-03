@@ -2,33 +2,37 @@
   * Generation settings
   */
 
-boolean gridPoints = true;
-boolean topView = true;
-boolean randomColours = false;
+boolean gridPoints = false; // OR random
+boolean topView = true; // OR side view
+boolean randomColours = true; // OR white
 float rate = -0.05; // Negative resonates outwards
 int numPointsX = 1000;
-int numPointsY = 20;
+int numPointsY = 10;
 float zHeight = 20;
 float maxZHeight = 20000; // Set super big for no max height
-float distanceDilate = 80; // Determines max height too, inverse relationship, do not make 0
-float whitespaceX = 200;
-float whitespaceY = 200;
-float antiSpike = 0; // Higher number reduces the huge spike in the centre, but makes all waves smaller
+float distanceDilate = 40; // Determines max height too, inverse relationship, do not make 0
+float spreadDilate = 40;
+float whitespaceX = 400;
+float whitespaceY = 400;
+float antiSpike = 0.1; // Higher number reduces the huge spike in the centre, but makes all waves smaller
 int alphaFade = 0; // Set to 255 to disable fading
+int heightDilate = 5;
+int fadeType = 1; // 0: Height-based, 1: Distance-based, 2: Random
 
+float maxDistance = distanceBetween(new float[]{(width-whitespaceX)/2,(height-whitespaceY)/2,0}, new float[]{whitespaceX/2, whitespaceY/2, 0});
 Point[] points = new Point[numPointsX * numPointsY];
 
 void setup () {
+  begin();
+}
+
+void begin () {
   size(1920, 1080, P3D);
   background(0);
   if (gridPoints) {
     for (int j = 0; j < numPointsY; j++) {
       for (int i = 0; i < numPointsX; i++) {
-        if (topView) {
-          points[j*numPointsX + i] = new Point(i*(width-whitespaceX)/numPointsX, j*(height-whitespaceY)/numPointsY, 0);
-        } else {
-          points[j*numPointsX + i] = new Point(i*(width-whitespaceX)/numPointsX, height/2, j*(height-whitespaceY)/numPointsY);
-        }
+        points[j*numPointsX + i] = new Point(i*(width-whitespaceX)/numPointsX, j*(height-whitespaceY)/numPointsY, 0);
       }
     }
   } else {
@@ -58,6 +62,13 @@ float distanceBetween(float[] v1, float[] v2) {
   return sqrt((v1[0]-v2[0])*(v1[0]-v2[0]) + (v1[1]-v2[1])*(v1[1]-v2[1]) + (v1[2]-v2[2])*(v1[2]-v2[2]));
 }
 
+float pow(float num, int exp) {
+  for (int i = 2; i < exp; i++) {
+    num *= num;
+  }
+  return num;
+}
+
 class Point {
   float x;
   float y;
@@ -72,7 +83,7 @@ class Point {
     x = xi;
     y = yi;
     z = zi;
-    t = distanceBetween(new float[]{x,y,z}, new float[]{(width-whitespaceX)/2,(height-whitespaceY)/2,0})/20;
+    t = distanceBetween(new float[]{x,y,z}, new float[]{(width-whitespaceX)/2,(height-whitespaceY)/2,0})/spreadDilate;
     d = t/distanceDilate;
     o = topView ? zi : yi;
     if (randomColours) {
@@ -82,24 +93,32 @@ class Point {
     } else {
       c = new int[] {255, 255, 255};
     }
-    a = 0;
+    if (fadeType == 1) {
+      a = 255 - int(spreadDilate*t*255 / maxDistance);
+      print(a + ", ");
+    } else {
+      a = 0;
+    }
   }
   
   void update () {
     t += rate;
     if (!topView) {
-      y = o + sin(t) * zHeight / (d*d + antiSpike);
+      y = o + sin(t) * zHeight / (pow(d, heightDilate) + antiSpike);
       if (y > maxZHeight) y = maxZHeight;
       if (y < -maxZHeight) y = -maxZHeight;
     } else {
-      z = o + sin(t) * zHeight / (d*d + antiSpike);
+      z = o + sin(t) * zHeight / (pow(d, heightDilate) + antiSpike);
       if (z > maxZHeight) z = maxZHeight;
       if (z < -maxZHeight) z = -maxZHeight;
     }
     
-    a = int(((z - o) * 255) / (zHeight/d*d));
-    if (a < 0) a *= -1;
-    a += alphaFade;
+    if (fadeType == 0) {
+      // Height-based fade
+      a = 255 - int(((z - o) * 255) / (zHeight/pow(d, heightDilate)));
+      if (a < 0) a *= -1;
+      a += alphaFade;
+    }
   }
   
   void display () {
