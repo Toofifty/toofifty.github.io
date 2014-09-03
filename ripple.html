@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ripple animation toy</title>
+		<link rel="stylesheet" type="text/css" media="screen" href="./css/style.css">
+		<script type="text/javascript" src="./js/processing.js"></script>
+		<script type="text/javascript">
+		function reload(id) {
+			var pjs = Processing.getInstanceById(id);
+			pjs.begin();
+		}
+		
+		function updateBool(id) {
+			var pjs = Processing.getInstanceById(id);
+			var val = document.getElementById('gridPoints').value;
+			pjs.updatebool(0, val);
+			val = document.getElementById('topView').value;
+			pjs.updatebool(1, val);
+			val = document.getElementById('randomColours').value;
+			pjs.updatebool(2, val);
+		}
+		</script>
+		<style type="text/css">
+		<!--
+		body {
+			font-family: Helvetica, Verdana, Arial, sans-serif;
+			background-color: white;
+			color: black;
+			text-align: center;
+		}
+		a:link, a:visited {
+			color: #000;
+		}
+		a:active, a:hover {
+			color: #666;
+		}
+		p {
+			font-size: small;
+		}
+		p.header {
+			font-size: small;
+		}
+		p.header span {
+			font-weight: bold;
+		}
+		p.footer {
+			font-size: x-small;
+		}
+		div.content {
+			margin: auto;
+			width: 1280px;
+		}
+		div.broken,
+		div.missing {
+			margin: auto;
+			position: relative;
+			top: 50%;
+			width: 193px;
+		}
+		div.broken a,
+		div.missing a {
+			height: 63px;
+			position: relative;
+			top: -31px;
+		}
+		div.broken img,
+		div.missing img {
+			border-width: 0px;
+		}
+		div.broken {
+			display: none;
+		}
+		div#unityPlayer {
+			cursor: default;
+			height: 720;
+			width: 1280;
+		}
+		-->
+		</style>
+	</head>
+	<body>
+    <br><br>
+		<p class="header" style="color: white; text-align: center;"><span>Processing |</span> Ripple animator</p>
+		<div class='overlay'></div>
+		<canvas id="ripple" data-processing-sources="./anim/ripple.pde"></canvas>
+		<div class="content">
+		</div>
+		<p class="footer" style="color: white;">&laquo; created with <a href="http://processing.org/" title="Processing">Processing</a> &raquo;</p>
+		<p style="color: white;"><strong>Usage</strong></p>
+		<p class="footer" style="color: white;">Options marked with a <strong>*</strong> may only work proeperly after a <strong>refresh</strong></p>
+		<p style="color: white;"><strong>Point grid*</strong> - toggle between random particle positions and an aligned grid.</p>
+		<p style="color: white;"><strong>Top-down view*</strong> - toggle between top-down view or side view.</p>
+		<p style="color: white;"><strong>Colours*</strong> - toggle between all white or randomly coloured particles.</p>
+		<p style="color: white;"><strong>Wave rate</strong> - change the speed/direction of the resonating effect.</p>
+		<p style="color: white;"><strong>Height mult</strong> - change the average height of the particles (height is out of the screen).</p>
+		<p style="color: white;"><strong>Max height</strong> - cap the maximum height that can be reached by the particles.</p>
+		<p style="color: white;"><strong>Distance coefficient</strong> - alter the (inverse) relationship between the height of the particle and it's distance from the centre point.</p>
+		<p style="color: white;"><strong>Spread coefficient</strong> - alter the amount that spread affects height.</p>
+		<p style="color: white;"><strong>X white space*</strong> - change the width of the animation.</p>
+		<p style="color: white;"><strong>Y white space*</strong> - change the height of the animation.</p>
+		<p style="color: white;"><strong>Anti-spike</strong> - increase to remove stray particles that travel too high. This also reduces height of all waves.</p>
+		<p style="color: white;"><strong># X points*</strong> - change the number of X (horizontal) points in the point grid. For random points, # points = #X * #Y.</p>
+		<p style="color: white;"><strong># Y points*</strong> - change the number of Y (vertical) points in the point grid.</p>
+		<p style="color: white;"><strong>Alpha fade</strong> - change the amount the particles fade when in fade type 0 (height-based). Setting to 255 will remove all fading.</p>
+		<p style="color: white;"><strong>Height exponent</strong> - exponentially change how many times the distance is used to reduce the wave height.</p>
+		<p style="color: white;"><strong>Fade type*</strong> - toggle between the 3 states of fade - height based (0), radius based (1), and random (2) (WIP).</p>
+	</body>
+</html>
