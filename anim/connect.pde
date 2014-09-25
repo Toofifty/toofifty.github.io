@@ -21,7 +21,7 @@ Vertex[] vertices = new Vertex[vertCount];
 
 void setup () {
   // Screen setup
-  size(1280, 720);
+  size(1920, 1080);
   
   minWidth = -width / moveFactor;
   minHeight = -height / moveFactor;
