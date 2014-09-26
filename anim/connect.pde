@@ -14,6 +14,9 @@ float _my;
 float _pmx;
 float _pmy;
 
+float _w = 1920;
+float _h = 1080;
+
 boolean _md = false;
 
 boolean web = true;
@@ -69,8 +72,8 @@ float dis(float x1, float y1, float x2, float y2) {
 void setmouse (float mx, float my) {
   _pmx = _mx;
   _pmy = _my;
-  _mx = mx;
-  _my = my;
+  _mx = mx / w * 1920;
+  _my = my / h * 1080;
 }
 
 boolean mousedown () {
@@ -84,6 +87,11 @@ void omd () {
 
 void omu () {
   _md = false;
+}
+
+void setsize (float w, float h) {
+  _w = w;
+  _h = h;
 }
 
 float mx () {
