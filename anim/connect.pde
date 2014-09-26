@@ -3,11 +3,18 @@
 */
 
 int vertCount = 40;
-float vertSize = 20;
+float vertSize = 15;
 float edgeSize = 2;
 float moveFactor = 20f;
 float maxDistance = 150f;
 float speed = 0.5f;
+
+float _mx;
+float _my;
+float _pmx;
+float _pmy;
+
+boolean web = true;
 
 float maxWidth;
 float maxHeight;
@@ -49,6 +56,33 @@ void draw () {
 float dis(float x1, float y1, float x2, float y2) {
   return sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
 } 
+
+void setmouse (float mx, float my) {
+  _pmx = _mx;
+  _pmy = _my;
+  _mx = mx;
+  _my = my;
+}
+
+float mx () {
+  if (web) return _mx;
+  return mouseX;
+}
+
+float my () {
+  if (web) return _my;
+  return mouseY;
+}
+
+float pmx () {
+  if (web) return _pmx;
+  return pmouseX;
+}
+
+float pmy () {
+  if (web) return _pmy;
+  return pmouseY;
+}
 
 class Vertex {
   float _x;
@@ -105,8 +139,8 @@ class Vertex {
   }
   
   public void movespace () {
-    float dx = mouseX - pmouseX;
-    float dy = mouseY - pmouseY;
+    float dx = mx() - pmx();
+    float dy = my() - pmy();
     
     _x -= dx/moveFactor;
     _y -= dy/moveFactor;
@@ -123,7 +157,7 @@ class Vertex {
   }
   
   public void draw () {
-    float _mdis = dis(_x, _y, mouseX, mouseY);
+    float _mdis = dis(_x, _y, mx(), my());
     stroke(fg[0], fg[1], fg[2], 255 - _mdis * 255 / width);
     fill(fg[0], fg[1], fg[2], 255 - _mdis * 255 / 500);
     ellipse(_x, _y, vertSize, vertSize);
