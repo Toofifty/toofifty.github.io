@@ -23,6 +23,12 @@ body {
   margin: 0;
   min-height: 100%;
   color:#f0e7d5;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 .footers {
   opacity: 0.7;
@@ -59,7 +65,7 @@ body {
   left: 0;
   top: 0;
   z-index: -99;
-  background: #041D37;
+  background: #07131E;
 }
 .animation {
   position: fixed;
@@ -68,10 +74,10 @@ body {
   margin-top: -540px;
   margin-left: -960px;
   z-index: -99;
-    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
-    -o-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 100px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0px 1px 100px rgba(0, 0, 0, 1);
+    -o-box-shadow: 0px 1px 100px rgba(0, 0, 0, 1);
+    box-shadow: 0px 1px 100px rgba(0, 0, 0, 1);
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     -o-border-radius: 20px;
@@ -109,7 +115,7 @@ a:hover {
   margin-right: auto;
 }
   .coda-slider-wrapper .coda-slider {
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
     -o-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.75);
