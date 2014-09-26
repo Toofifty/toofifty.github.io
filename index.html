@@ -21,12 +21,17 @@
 		}
 		document.onmousemove = getCursorXY;
 	}
-
+	var connectanim = Processing.getInstanceById("connect");
 	function getCursorXY(e) {
 		var cx = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
 		var cy = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
-		var pjs = Processing.getInstanceById("connect");
-		pjs.setmouse(cx, cy);
+		connectanim.setmouse(cx, cy);
+	}
+	document.body.onmousedown = function() { 
+	  connectanim.omd();
+	}
+	document.body.onmouseup = function() {
+	  connectanim.omu();
 	}
 	</script>
   </head>

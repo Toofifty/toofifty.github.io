@@ -14,6 +14,8 @@ float _my;
 float _pmx;
 float _pmy;
 
+boolean _md = false;
+
 boolean web = true;
 
 float maxWidth;
@@ -51,6 +53,13 @@ void draw () {
     vertices[i].drawlines(i);
     vertices[i].draw();
   }
+  if (mousedown()) {
+    for (int i = 0; i < vertCount; i++) {
+      if (vertices[i].checkbounds()) {
+        vertices[i].drag();
+      }
+    }
+  }
 }
 
 float dis(float x1, float y1, float x2, float y2) {
@@ -62,6 +71,19 @@ void setmouse (float mx, float my) {
   _pmy = _my;
   _mx = mx;
   _my = my;
+}
+
+boolean mousedown () {
+  if (web) return _md;
+  return mousePressed;
+}
+
+void omd () {
+  _md = true;
+}
+
+void omu () {
+  _md = false;
 }
 
 float mx () {
@@ -84,11 +106,20 @@ float pmy () {
   return pmouseY;
 }
 
+void mouseDragged () {
+  for (int i = 0; i < vertCount; i++) {
+    if (vertices[i].checkbounds()) {
+      vertices[i].drag();
+    }
+  }
+}
+
 class Vertex {
   float _x;
   float _y;
   float _dir;
   int _m = 1;
+  boolean _d;
   
   public Vertex (float x, float y) {
     _x = x;
@@ -103,6 +134,7 @@ class Vertex {
   }
   
   public void move () {
+    if (_d) return;
     float _mdir = atan((mouseY - _y) / (mouseX - _x));
     
     _x += speed * cos(_dir);
@@ -139,11 +171,26 @@ class Vertex {
   }
   
   public void movespace () {
+    if (_d) return;
     float dx = mx() - pmx();
     float dy = my() - pmy();
     
     _x -= dx/moveFactor;
     _y -= dy/moveFactor;
+  }
+  
+  public boolean checkbounds () {
+    if (dis(_x, _y, mx(), my()) <= vertSize) {
+      _d = true;
+    } else {
+      _d = false;
+    }
+    return _d;
+  }
+  
+  public void drag () {
+    _x += mx() - pmx();
+    _y += my() - pmy();
   }
   
   public void drawlines (int start) {
@@ -160,6 +207,10 @@ class Vertex {
     float _mdis = dis(_x, _y, mx(), my());
     stroke(fg[0], fg[1], fg[2], 255 - _mdis * 255 / width);
     fill(fg[0], fg[1], fg[2], 255 - _mdis * 255 / 500);
+    if (_d) {
+      ellipse(_x, _y, vertSize * 1.2f, vertSize * 1.2f);
+      return;
+    }
     ellipse(_x, _y, vertSize, vertSize);
   }
 }
