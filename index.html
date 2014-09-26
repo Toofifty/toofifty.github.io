@@ -23,17 +23,14 @@
 	}
 
 	function getCursorXY(e) {
-		document.getElementById('cursorX').value = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
-		document.getElementById('cursorY').value = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+		var cx = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
+		var cy = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
 		var pjs = Processing.getInstanceById("connect");
-		pjs.setmouse(document.getElementById('cursorX').value, document.getElementById('cursorY').value);
+		pjs.setmouse(cx, cy);
 	}
 	</script>
   </head>
   <body>
-	<input type="text" id="cursorX" size="3"> X-position of the mouse cursor
-	<br /><br />
-	<input type="text" id="cursorY" size="3"> Y-position of the mouse cursor
     <div class='overlay'></div>
 	<canvas class="overlay" id="connect" data-processing-sources="./anim/connect.pde"></canvas>
     <div class="coda-slider" id="slider-id">
