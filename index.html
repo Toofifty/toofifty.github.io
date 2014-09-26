@@ -25,8 +25,7 @@
 		var cx = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
 		var cy = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
 		var pjs = Processing.getInstanceById("connect");
-		pjs.setmouse(cx, cy);
-		pjs.setsize(window.innerWidth, window.innerHeight);
+		pjs.setmouse(cx - window.innerWidth/2 + 960, cy - window.innerHeight/2 + 540);
 	}
 	document.body.onmousedown = function() { 
 		var pjs = Processing.getInstanceById("connect");
@@ -40,7 +39,7 @@
   </head>
   <body>
     <div class='overlay'></div>
-	<canvas class="overlay" id="connect" data-processing-sources="./anim/connect.pde"></canvas>
+	<canvas class="animation" id="connect" data-processing-sources="./anim/connect.pde"></canvas>
     <div class="coda-slider" id="slider-id">
       <div>
         <h2 class="title">home</h2>

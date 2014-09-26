@@ -3,19 +3,16 @@
 */
 
 int vertCount = 40;
-float vertSize = 15;
+float vertSize = 30;
 float edgeSize = 2;
 float moveFactor = 20f;
-float maxDistance = 150f;
+float maxDistance = 200f;
 float speed = 0.5f;
 
 float _mx;
 float _my;
 float _pmx;
 float _pmy;
-
-float _w = 1920;
-float _h = 1080;
 
 boolean _md = false;
 
@@ -34,6 +31,7 @@ Vertex[] vertices = new Vertex[vertCount];
 void setup () {
   // Screen setup
   size(1920, 1080);
+  frameRate(60);
   
   minWidth = -width / moveFactor;
   minHeight = -height / moveFactor;
@@ -45,22 +43,21 @@ void setup () {
   }
   
   strokeWeight(edgeSize);
+  textSize(32);
 }
 
 void draw () {
-  fill(bg[0], bg[1], bg[2], 100);
-  rect(0, 0, width, height);
+  background(bg[0], bg[1], bg[2]);
   for (int i = 0; i < vertCount; i++) {
     vertices[i].move();
     vertices[i].movespace();
     vertices[i].drawlines(i);
     vertices[i].draw();
   }
-  if (mousedown()) {
-    for (int i = 0; i < vertCount; i++) {
-      if (vertices[i].checkbounds()) {
-        vertices[i].drag();
-      }
+  for (int i = 0; i < vertCount; i++) {
+    if (vertices[i].checkbounds()) {
+      if (!mousedown()) continue;
+      vertices[i].drag();
     }
   }
 }
@@ -72,8 +69,8 @@ float dis(float x1, float y1, float x2, float y2) {
 void setmouse (float mx, float my) {
   _pmx = _mx;
   _pmy = _my;
-  _mx = mx / w * 1920;
-  _my = my / h * 1080;
+  _mx = mx;
+  _my = my;
 }
 
 boolean mousedown () {
@@ -87,11 +84,6 @@ void omd () {
 
 void omu () {
   _md = false;
-}
-
-void setsize (float w, float h) {
-  _w = w;
-  _h = h;
 }
 
 float mx () {
@@ -114,36 +106,31 @@ float pmy () {
   return pmouseY;
 }
 
-void mouseDragged () {
-  for (int i = 0; i < vertCount; i++) {
-    if (vertices[i].checkbounds()) {
-      vertices[i].drag();
-    }
-  }
-}
-
 class Vertex {
   float _x;
   float _y;
   float _dir;
   int _m = 1;
   boolean _d;
+  float _v;
   
   public Vertex (float x, float y) {
     _x = x;
     _y = y;
     _dir = random(0, 360);
+    _v = random(-vertSize/10, vertSize/10);
   }
   
   public Vertex () {
     _x = random(0, maxWidth);
     _y = random(0, maxHeight);
     _dir = random(0, 360);
+    _v = random(-vertSize+1, vertSize);
   }
   
   public void move () {
     if (_d) return;
-    float _mdir = atan((mouseY - _y) / (mouseX - _x));
+    float _mdir = atan((my() - _y) / (mx() - _x));
     
     _x += speed * cos(_dir);
     _y += speed * sin(_dir);
@@ -197,8 +184,8 @@ class Vertex {
   }
   
   public void drag () {
-    _x += mx() - pmx();
-    _y += my() - pmy();
+    _x = mx();
+    _y = my();
   }
   
   public void drawlines (int start) {
@@ -216,9 +203,9 @@ class Vertex {
     stroke(fg[0], fg[1], fg[2], 255 - _mdis * 255 / width);
     fill(fg[0], fg[1], fg[2], 255 - _mdis * 255 / 500);
     if (_d) {
-      ellipse(_x, _y, vertSize * 1.2f, vertSize * 1.2f);
+      ellipse(_x, _y, (_v + vertSize) * 1.2f, (_v + vertSize) * 1.2f);
       return;
     }
-    ellipse(_x, _y, vertSize, vertSize);
+    ellipse(_x, _y, _v + vertSize, _v + vertSize);
   }
 }
