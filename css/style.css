@@ -9,32 +9,127 @@ a {
   transition:.5s;
   text-shadow: 1px 1px #000;
 }
+
+a:hover {
+  color: #6998B4;
+  text-shadow: 1px 1px #2B5F7E;
+}
+
 h2 {
   color: #5691B4;
   font-family: "Lobster", cursive;
   font-size: 50px;
   text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
+
 li {
   color:#f0e7d5;
 }
+
 body {
+  overflow: hidden;
   height: 100%;
   margin: 0;
   min-height: 100%;
   color:#f0e7d5;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+  font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.cimg {
+  float: right;
+  border: 4px solid #434343;
+  height: 120px;
+  width: 120px;
+  margin: 10px;
+}
+
+.guide {
+  overflow: hidden;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+  bottom: 20px;
+  right: 20px;
+  width: 120px;
+  height: 60px;
+  max-height: 260px;
+  position: absolute;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.guide:hover {
+  overflow: auto;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+  width: 25%;
+  height: 50%;
+  max-height: 260px;
+  background: rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+  -o-box-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+}
+
+.options {
+  left: 20px;
+  width: 150px;
+}
+
+.options:hover {
+  width: 25%;
+}
+
+.behind {
+  position: fixed;
+  text-align: center;
+  color: #000;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  z-index: -1;
+  background: #FFDCAF;
+}
+
+.content {
+  overflow: auto;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+  -o-box-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+}
+
+.popup {
+  overflow: auto;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+  -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+  -o-box-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+}
+
 .footers {
   opacity: 0.7;
   font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   z-index: -1;
 }
+
 .footers .left {
   left: 0px;
   margin-left: 10px;
@@ -42,12 +137,14 @@ body {
   position: fixed;
   bottom: 0px;
 }
+
 .footers .right {
   right: 0px;
   margin-right: 10px;
   position: fixed;
   bottom: 0px;
 }
+
 .footers .middle {
   margin-right: auto;
   margin-left: auto;
@@ -58,6 +155,7 @@ body {
   -webkit-transition:.5s;
   transition:.5s;
 }
+
 .overlay {
   position: fixed;
   width:100%;
@@ -65,26 +163,9 @@ body {
   left: 0;
   top: 0;
   z-index: -99;
-  background: #07131E;
+  background-image: url("../img/bg.jpg");
 }
-.animation {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -540px;
-  margin-left: -960px;
-  z-index: -99;
-    -moz-box-shadow: 0px 1px 100px rgba(0, 0, 0, 1);
-    -webkit-box-shadow: 0px 1px 100px rgba(0, 0, 0, 1);
-    -o-box-shadow: 0px 1px 100px rgba(0, 0, 0, 1);
-    box-shadow: 0px 1px 100px rgba(0, 0, 0, 1);
-    -moz-border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -o-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -khtml-border-radius: 20px;
-    border-radius: 20px;
-}
+
 .enlarge-image {  
   float: left;
   opacity: .75;
@@ -96,6 +177,7 @@ body {
   -webkit-transition:.5s;
   transition:.5s;
 }
+
 .enlarge-image:hover {
   opacity: 1;
   -o-transition:.5s;
@@ -104,10 +186,7 @@ body {
   -webkit-transition:.5s;
   transition:.5s;
 }
-a:hover {
-  color: #6998B4;
-  text-shadow: 1px 1px #2B5F7E;
-}
+
 .coda-slider-wrapper {
   padding: 10% 0; 
   font: 14px/1.5 "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
