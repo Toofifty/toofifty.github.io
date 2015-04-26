@@ -100,6 +100,7 @@ body {
 }
 
 .content {
+  display: block;
   overflow: auto;
   -o-transition:.5s;
   -ms-transition:.5s;

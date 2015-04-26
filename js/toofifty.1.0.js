@@ -4,10 +4,12 @@ var WIDTH = window.innerWidth,
       ASPECT = WIDTH / HEIGHT,
       MOVESPEED = 100,
       LOOKSPEED = 0.075,
-      POINTSX = 60,
-      POINTSY = 60,
+      POINTSX = 64,
+      POINTSY = 64,
       BLUR_TIME = 0.2,
       BLUR_MAX = 1.0 / 512.0,
+	  WAVE_HEIGHT = 40,
+	  BOB_HEIGHT = 20,
       MAXDIST = 100;
 // GLOBALS
 var t = THREE, 
@@ -203,7 +205,7 @@ function determineHeights () {
 
                         var sinTerm = d / ( Math.PI * 4 ) - ( time / 2 );
                         var distMult = ( k - d ) / ( 2 * k );
-                        v[ i ].z += 50 * Math.sin( sinTerm ) * distMult;
+                        v[ i ].z += WAVE_HEIGHT * Math.sin( sinTerm ) * distMult;
 
                   }
             }
@@ -236,7 +238,7 @@ function updateNodes ( delta ) {
             if ( nodes[ i ].box != selected ) {
 
                   nodes[ i ].incrementTime( delta );
-                  nodes[ i ].box.position.y = 80 + 20 * Math.sin( ( nodes[ i ].time + 4 * i ) / 2 );
+                  nodes[ i ].box.position.y = 80 + BOB_HEIGHT * Math.sin( ( nodes[ i ].time + 4 * i ) / 2 );
                   nodes[ i ].updateText();
 
             }
@@ -644,8 +646,8 @@ Node = function ( x, y, nodeTitle, aoe, nodeSize, color, htmlTitle, imgURL, html
             this.box = new t.Mesh(
                   new t.BoxGeometry( this.nodeSize, this.nodeSize, this.nodeSize ),
                   new t.MeshBasicMaterial( { color: this.color } ) );
-            this.box.position.y = 50;
             this.box.position.x = x;
+            this.box.position.y = 50;
             this.box.position.z = y;
             scene.add( this.box );
 
@@ -665,9 +667,9 @@ Node = function ( x, y, nodeTitle, aoe, nodeSize, color, htmlTitle, imgURL, html
       this.updateText = function () {
 
             this.text.position.y = this.box.position.y;
-            this.text.rotation.z = cam.rotation.z + 0.1;
-            this.text.rotation.y = cam.rotation.y;
             this.text.rotation.x = cam.rotation.x;
+            this.text.rotation.y = cam.rotation.y;
+            this.text.rotation.z = cam.rotation.z + 0.1;
 
       }
 
