@@ -138,7 +138,8 @@ function initScene() {
     
     var geometry = new THREE.PlaneGeometry(1000, 1000, POINTS.x, POINTS.y),
         light = new THREE.DirectionalLight(COLOURS.light, 0.7),
-        hemi = new THREE.HemisphereLight(COLOURS.hemi1, COLOURS.hemi2, 1);
+        hemi = new THREE.HemisphereLight(COLOURS.hemi1, COLOURS.hemi2, 1),
+        i, v, u, d;
 
     // Meshes
     
@@ -171,8 +172,28 @@ function initScene() {
     
     hitplane.rotation.x = -Math.PI / 2;
     
+    v = wireframe.geometry.vertices;
+    u = plane.geometry.vertices;
+    
+    d = Math.abs(v[0].x - v[1].x);
+    
     scene.add(plane);
     scene.add(hitplane);
+    
+    for (i = 0; i < v.length; i++) {
+        
+        v[i].x += (Math.random() - 0.5) * d * 0.5;
+        v[i].y += (Math.random() - 0.5) * d * 0.5;
+        u[i].x = v[i].x;
+        u[i].y = v[i].y;
+     
+    }
+    
+    plane.geometry.computeFaceNormals();
+    plane.geometry.normalsNeedUpdate = true;
+    plane.geometry.verticesNeedUpdate = true;
+    
+    wireframe.geometry.verticesNeedUpdate = true;
     
     // Lights
     
