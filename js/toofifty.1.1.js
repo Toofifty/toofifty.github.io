@@ -41,12 +41,12 @@ var horizontalBlur,
     verticalBlur;
     
 var content, popup,
-    pbox = {w: 400, h: 175};
+    pbox = {w: 400, h: 200};
 
 var controls;
 var nodes = [];
 var frame, time = 0, avFPS;
-var minFPS = 30;
+var minFPS = 25;
 var currentBlur = 0;
 
 var m3d = {x: 0, y: 0, z: 0};
@@ -332,14 +332,10 @@ function showSlowMessage() {
     popup.style.width = pbox.w + "px";
     popup.style.height = pbox.h + "px";
     popup.style.zIndex = "10";
-    popup.style.webkitTransition = '0.5s';
-    popup.style.MozTransition = '0.5s';
-    popup.style.msTransition = '0.5s';
-    popup.style.OTransition = '0.5s';
     popup.style.transition = '0.5s';
     
     setTimeout( function () {
-        popup.innerHTML = '<h2>Oh no!</h2><hr>'
+        popup.innerHTML = '<h2>Oh no!</h2>'
             + '<p>Your device seems to be struggling to show the animation.</p>'
             + '<p>Click inside this box to go to a less intensive page, or click outside to stay here.</p>';
     }, 500 );

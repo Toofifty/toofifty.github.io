@@ -267,7 +267,7 @@ a:hover {
 [class$="-arrow"] {
   width: 25px;
   height: 25px;
-  background-image: url(../images/arrow.png);
+  background-image: url(../img/arrow.png);
   background-repeat: no-repeat;
   margin-top: 50px;
   position:relative;
