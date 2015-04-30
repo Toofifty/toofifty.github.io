@@ -21,6 +21,17 @@ h2 {
   box-shadow: 5px 0px 5px #000;
 }
 
+h1 {
+  display: block;
+  background-color: #5691B4;
+  color: #202020;
+  margin-top: 0px;
+  padding: 5px 20px 5px 20px;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  box-shadow: 0px 0px 5px #000;
+}
+
 p {
   font-family: "Ubuntu", sans-serif;
   margin: 20px;
@@ -70,7 +81,26 @@ a:hover {
   transition: 0.5s;
 }
 
+.project {
+  border-radius: 2px;
+  margin: 10px;
+  height: 150px;
+  overflow: hidden;
+  box-shadow: 0px 0px 5px #000;
+}
 
+.project img {
+  height: 150px;
+}
+
+.project .right {
+  float: right;
+}
+
+.project .left {
+  float: left;
+  margin-right: 20px;
+}
 
  /*
  *  Liquid Slider v2
@@ -96,7 +126,7 @@ a:hover {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 .liquid-slider {
   background: #F0F0F0;
@@ -140,6 +170,12 @@ a:hover {
   float: left;
   background-color: #F0F0F0;
 }
+
+.liquid-slider .ls-panel .content {
+  height: 400px;
+  overflow: auto;
+}
+
 .panel-wrapper {  
   padding: 0px;
   position:relative;
