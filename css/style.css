@@ -128,7 +128,7 @@ h1 {
     width: 75px;
     background: #666;
     border-radius: 400px;
-    border: 5px solid #FFF;
+    border: 5px solid #EEE;
     margin-top: -57px;
     float: left;
 }
@@ -358,7 +358,7 @@ textarea {
     #about > .content > img {
         width: 150px;
         height: 150px;
-        margin-top: -95px;
+        margin-top: -90px;
     }
     
     h1 {
