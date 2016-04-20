@@ -1,54 +1,310 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>amatheson.net</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="./css/nodes.css">
-  </head>
-  <body>
+    <head>
+        <title>Alex Matheson &middot; Developer</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="js/processing.min.js"></script>
+        <script src="js/main.js"></script>
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <h1 onclick="scrollTo(0)">Alex Matheson</h1>
 
+        <div class="nav">
+            <a onclick="scrollTo(0)">home</a>
+            <a onclick="scrollTo('#about')">about</a>
+            <a onclick="scrollTo('#portfolio')">portfolio</a>
+            <a onclick="scrollTo('#contact')">contact</a>
+        </div>
 
-    <div id="guide" class="guide" onmouseover="isOverHTML = true;" onmouseout="isOverHTML = false;">
-      <h2>usage</h2>
-      <div class="text">
-          <p><strong>Left click</strong> and drag, or use your <strong>arrow keys</strong> to pan the camera.</p>
-          <p><strong>Press Return (Enter)</strong> or <strong>click on a node</strong> to toggle lock a content window open.</p>
-          <p><strong>Scroll</strong> to zoom in and out.</p>
-          <p><strong>Hover</strong> over a node to show its content.</p>
-       </div>
-    </div>
-
-    <div class="behind">
-      <h2>Oops!</h2>
-      <p>It looks like your device / browser either does not support <strong>WebGL</strong> or does not have <strong>JavaScript</strong> enabled.</p>
-      <p><a href="less_fancy.html">Click here</a> for a different version of my website.</p>
-      <p>Alternatively, <a href="http://get.webgl.org/">get WebGL</a> or find out how to <a href="http://www.enable-javascript.com/">enable JavaScript</a>.</p>
-    </div>
-
-    <div id="debug" style="top: 10px;, right: 10px; background: #fffff;">
-    </div>
-
-    <div id="play" class="guide options" onmouseover="isOverHTML = true;" onmouseout="isOverHTML = false;">
-      <h2>options</h2>
-      <div class="text">
-        <p>Coming soon!</p>
-      </div>
-    </div>
-
-    <script src="./js/three.min.js"></script>
-    <script src="./js/OrbitControls.js"></script>
-    <script src="./js/Projector.js"></script>
-    <script src="./js/HorizontalBlurShader.js"></script>
-    <script src="./js/VerticalBlurShader.js"></script>
-    <script src="./js/CopyShader.js"></script>
-    <script src="./js/ShaderPass.js"></script>
-    <script src="./js/RenderPass.js"></script>
-    <script src="./js/MaskPass.js"></script>
-    <script src="./js/EffectComposer.js"></script>
-    <script src="./js/RGBShiftShader.js"></script>
-    <script src="./js/helvetiker_bold.typeface.js"></script>
-    <script src="./js/helvetiker_regular.typeface.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css' async>
-    <script src="./js/toofifty.1.1.js" style="height: 100%; width: 100%;"></script>
-  </body>
+        <div id="home">
+            <div class="dark-rect">
+                <div class="title">
+                    <h2>software engineer &middot; app developer &middot; web designer</h2><br/>
+                    <a onclick="scrollTo('#contact')" class="button">contact</a>
+                    <a onclick="scrollTo('#portfolio')" class="button">portfolio</a>
+                </div>
+            </div>
+        </div>
+        <div id="about">
+            <div class="content">
+                <img height="150px" width="150px" src="img/avatar.png" />
+                <br/>
+                <p>Second-year Software Engineering student from Ballarat, Victoria</p>
+                <p>Studying for a Bachelor of Software Engineering at RMIT</p>
+                <p>Strong passion for designing and developing all kinds of software and web applications</p>
+                <br/>
+                <hr>
+                <h2>Languages</h2>
+                <div class="skills-container">
+                    <table class="skills-table">
+                        <tr>
+                            <td>Java</td>
+                            <td><p class="stat">__________</p></td>
+                        </tr>
+                        <tr>
+                            <td>Python</td>
+                            <td><p class="stat">__________</p></td>
+                        </tr>
+                        <tr>
+                            <td>C</td>
+                            <td><p class="stat">________</p></td>
+                        </tr>
+                        <tr>
+                            <td>C#</td>
+                            <td><p class="stat">_________</p></td>
+                        </tr>
+                        <tr>
+                            <td>SQL</td>
+                            <td><p class="stat">________</p></td>
+                        </tr>
+                        <tr>
+                            <td>C++</td>
+                            <td><p class="stat">__</p></td>
+                        </tr>
+                        <tr>
+                            <td>English</td>
+                            <td><p class="stat">__________</p></td>
+                        </tr>
+                    </table>
+                    <table class="skills-table">
+                        <tr>
+                            <td>HTML5</td>
+                            <td><p class="stat">__________</p></td>
+                        </tr>
+                        <tr>
+                            <td>CSS3</td>
+                            <td><p class="stat">__________</p></td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td><p class="stat">_________</p></td>
+                        </tr>
+                        <tr>
+                            <td>PHP</td>
+                            <td><p class="stat">________</p></td>
+                        </tr>
+                        <tr>
+                            <td>Lua</td>
+                            <td><p class="stat">_________</p></td>
+                        </tr>
+                        <tr>
+                            <td>Perl</td>
+                            <td><p class="stat">________</p></td>
+                        </tr>
+                        <tr>
+                            <td>German</td>
+                            <td><p class="stat">_</p></td>
+                        </tr>
+                    </table>
+                </div>
+                <h2>Frameworks</h2>
+                <div class="skills-container">
+                    <table class="skills-table">
+                        <tr>
+                            <td>.NET</td>
+                            <td><p class="stat">_______</p></td>
+                        </tr>
+                        <tr>
+                            <td>Unity</td>
+                            <td><p class="stat">_________</p></td>
+                        </tr>
+                        <tr>
+                            <td>Swing</td>
+                            <td><p class="stat">_________</p></td>
+                        </tr>
+                        <tr>
+                            <td>lwjgl</td>
+                            <td><p class="stat">__________</p></td>
+                        </tr>
+                        <tr>
+                            <td>Fuse</td>
+                            <td><p class="stat">_________</p></td>
+                        </tr>
+                        <tr>
+                            <td>Cordova / Phonegap</td>
+                            <td><p class="stat">________</p></td>
+                        </tr>
+                    </table>
+                    <table class="skills-table">
+                        <tr>
+                            <td>Django</td>
+                            <td><p class="stat">_______</p></td>
+                        </tr>
+                        <tr>
+                            <td>jQuery</td>
+                            <td><p class="stat">__________</p></td>
+                        </tr>
+                        <tr>
+                            <td>Polymer</td>
+                            <td><p class="stat">_________</p></td>
+                        </tr>
+                        <tr>
+                            <td>Bootstrap</td>
+                            <td><p class="stat">______</p></td>
+                        </tr>
+                        <tr>
+                            <td>Node.js</td>
+                            <td><p class="stat">________</p></td>
+                        </tr>
+                        <tr>
+                            <td>Angular.js</td>
+                            <td><p class="stat">_________</p></td>
+                        </tr>
+                    </table>
+                </div>
+                <h2>Tools</h2>
+                <div class="skills-container">
+                    <table class="skills-table">
+                        <tr>
+                            <td>Git</td>
+                            <td><p class="stat">__________</p></td>
+                        </tr>
+                        <tr>
+                            <td>Xcode</td>
+                            <td><p class="stat">______</p></td>
+                        </tr>
+                        <tr>
+                            <td>Eclipse</td>
+                            <td><p class="stat">__________</p></td>
+                        </tr>
+                        <tr>
+                            <td>Microsoft Office</td>
+                            <td><p class="stat">__________</p></td>
+                        </tr>
+                    </table>
+                    <table class="skills-table">
+                        <tr>
+                            <td>Google Docs</td>
+                            <td><p class="stat">__________</p></td>
+                        </tr>
+                        <tr>
+                            <td>Adobe Photoshop</td>
+                            <td><p class="stat">________</p></td>
+                        </tr>
+                        <tr>
+                            <td>Adobe Suite</td>
+                            <td><p class="stat">_____</p></td>
+                        </tr>
+                        <tr>
+                            <td>Paint.NET</td>
+                            <td><p class="stat">________</p></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="portfolio">
+            <div class="content">
+                <h2>Portfolio</h2>
+                <div class="project-container">
+                    <div class="project">
+                        <p>iPhone &amp; Android app &middot; Fuse</p>
+                        <h3>Suttons House of Music</h3>
+                        <a href="https://itunes.apple.com/us/app/suttons-house-of-music/id1041774516">Google Play</a>
+                        <a href="https://play.google.com/store/apps/details?id=me.matho.suttons&hl=en">Apple Store</a>
+                    </div>
+                    <img src="img/suttons.jpg" />
+                </div>
+                <div class="project-container">
+                    <div class="project">
+                        <p>Interactive animations &middot; Processing/Java</p>
+                        <h3>p5</h3>
+                        <a href="http://github.com/Toofifty/p5">Github</a>
+                    </div>
+                    <img src="img/iso_cubes.gif" />
+                </div>
+                <div class="project-container">
+                    <div class="project">
+                        <p>Minecraft plugin &middot; Java</p>
+                        <h3>RapidIRC</h3>
+                        <a href="https://github.com/Toofifty/rapidirc">Github</a>
+                    </div>
+                    <img src="img/rapidirc.png" />
+                </div>
+                <div class="project-container">
+                    <div class="project">
+                        <p>Multiplayer game &middot; Unity</p>
+                        <h3>Spectrum</h3>
+                        <a href="https://github.com/Toofifty/spectrum">Github</a>
+                        <a href="#">Play in browser</a>
+                    </div>
+                    <img src="img/spectrum.png" />
+                </div>
+                <div class="project-container">
+                    <div class="project">
+                        <p>IRC Bot &middot; Python</p>
+                        <h3>Oracle</h3>
+                        <a href="https://github.com/Toofifty/oracle3">Github</a>
+                    </div>
+                    <img src="img/oracle.png" />
+                </div>
+                <div class="project-container">
+                    <div class="project">
+                        <p>Reddit Bot &middot; Python</p>
+                        <h3>The Great Sub</h3>
+                        <a href="https://github.com/Toofifty/the-great-sub">Github</a>
+                        <a href="http://reddit.com/r/thegreatsub">Subreddit</a>
+                    </div>
+                    <img src="img/thegreatsub.png" />
+                </div>
+                <div class="project-container">
+                    <div class="project">
+                        <p>Webpage and portfolio &middot; HTML, CSS, JS</p>
+                        <h3>Personal webpage</h3>
+                        <a href="https://github.com/Toofifty/toofifty.github.io">Github</a>
+                    </div>
+                    <img src="img/webpage.png" />
+                </div>
+                <div class="project-container">
+                    <div class="project">
+                        <p>Programming challenges &middot; Python, Java</p>
+                        <h3>Project Euler Challenges</h3>
+                        <a href="https://github.com/Toofifty/project-euler">Github</a>
+                    </div>
+                    <img src="img/euler.png" />
+                </div>
+                <div class="project-container">
+                    <div class="project">
+                        <p>More of my projects</p>
+                        <a href="https://github.com/Toofifty">Github</a>
+                    </div>
+                    <img src="img/avatar.png" />
+                </div>
+            </div>
+        </div>
+        <div id="contact">
+            <div class="content">
+                <h2>Contact</h2>
+                <form action="http://formspree.io/amatho250@gmail.com" method="post">
+                    <div class="form-input">
+                        <label>name</label>
+                        <input type="text" default="name" name="name"/>
+                    </div>
+                    <div class="form-input">
+                        <label>email</label>
+                        <input type="text" default="email" name="email"/>
+                    </div>
+                    <div class="form-input">
+                        <label>subject</label>
+                        <input type="text" default="subject" name="subject"/>
+                    </div>
+                    <div class="form-input msg">
+                        <label>message</label>
+                        <textarea default="message" name="message"></textarea>
+                    </div>
+                    <div class="form-input">
+                        <button type="submit">submit</button>
+                    </div>
+                </form>
+                <a href="http://google.com/"><img src="img/icon/github.svg" type="image/svg+xml" /></a>
+                <a href="http://google.com/"><img src="img/icon/googleplus.svg" type="image/svg+xml" /></a>
+                <a href="http://google.com/"><img src="img/icon/linkedin.svg" type="image/svg+xml" /></a>
+                <a href="http://google.com/"><img src="img/icon/twitter.svg" type="image/svg+xml" /></a>
+            </div>
+        </div>
+    </body>
 </html>
