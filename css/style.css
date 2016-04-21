@@ -109,14 +109,13 @@ h1 {
     position: relative;
     margin-top: calc(100vh - 115px);
     width: 100%;
-    /*height: calc(100vh - 80px);*/
     padding-top: 95px;
     z-index: 1;
 }
 
 #about > .content {
     margin: 0 auto;
-    padding: 10px 20%;
+    padding: 10px 15%;
     text-align: right;
     background: #EEE;
     padding-bottom: 50px;
@@ -157,7 +156,7 @@ h1 {
 }
 
 .skills-table {
-    width: 30%;
+    width: 35%;
     margin: 0 5%;
     min-width: 200px;
     text-align: left;
@@ -167,6 +166,25 @@ h1 {
 .skills-table td {
     color: #444;
     width: 100%;
+    vertical-align: top;
+}
+
+.skills-table td > p {
+    color: #888;
+    text-align: center;
+    font-size: 0.6em;
+}
+
+.skill-status-bg {
+    background: #FFF;
+    height: 10px;
+    width: 100%;
+    min-width: 100px;
+}
+
+.skill-status {
+    background: #444;
+    height: 100%;
 }
 
 .skills {
@@ -180,15 +198,6 @@ h1 {
 
 .skills > p {
     color: #444;
-}
-
-.stat {
-    display: inline-block;
-    background: #555;
-    color: rgba(0, 0, 0, 0);
-    width: auto;
-    cursor: default;
-    height: 10px;
 }
 
 #portfolio {
