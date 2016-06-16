@@ -35,9 +35,6 @@ h1 {
     font-size: 1.2em;
     text-transform: uppercase;
 
-    background: rgba(0, 0, 0, 0.5);
-    border-bottom: 2px solid #FFF;
-    border-top: 2px solid rgba(0, 0, 0, 0);
     z-index: 10;
     
     transition: 0.5s;
@@ -53,6 +50,48 @@ h1 {
     width: 100%;
     transition: 0.5s;
     display: none;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #FFF;
+  padding: 10px;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  background: #FFF;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  color: #222;
+}
+
+.btn:hover:after {
+  height: 100%;
+}
+
+.btn-main {
+    text-transform: uppercase;
+    margin: 10px;
+}
+
+.btn-sel {
+    color: #222;
+}
+
+.btn-sel:after {
+    height: 100%;
 }
 
 #home {
@@ -212,73 +251,116 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}body {
+  background: #222;
+  font-family: "Lato", sans-serif;
+  color: #FFF;
 }
 
 .project-container {
-    background: #222;
-    display: inline-block;
-    position: relative;
-    width: 90%;
-    max-width: 300px;
-    max-height: 300px;
-    height: 300px;
-    /*border: 2px solid #FFF;*/
-    margin: 1.5%;
-}
-
-.project {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    max-width: 300px;
-    max-height: 300px;
-    background: rgba(0, 0, 0, 0);
-    transition: 0.5s;
-}
-
-.project:hover {
-    background: rgba(0, 0, 0, 0.8);
+  background: #333;
+  display: inline-block;
+  position: relative;
+  width: 90%;
+  width: 300px;
+  height: 300px;
+  margin: 1.5%;
 }
 
 .project-container > img {
-    width: 100%;
+  z-index: -3;
+  width: 100%;
+  height: 100%;
 }
 
-.project p {
-    position: absolute;
-    width: 100%;
-    margin-top: 30%;
-    color: rgba(0, 0, 0, 0);
-    transition: 0.5s;
+.project {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0,0,0,0.75);
+  transition: 0.5s;
+  z-index: 0;
+  opacity: 0;
+}
+
+.project:hover {
+  opacity: 1;
 }
 
 .project > h3 {
-    position: absolute;
-    width: 100%;
-    margin-top: 40%;
-    color: rgba(0, 0, 0, 0);
-    font-size: 1.2em;
-    text-transform: uppercase;
-    transition: 0.5s;
+  text-transform: uppercase;
+  position: absolute;
+  top: 38%;
+  text-align: center;
+  width: 100%;
+  transition: 0.5s;
 }
 
-.project a {
-    display: inline-block;
-    border: 2px solid rgba(0, 0, 0, 0);
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 10px;
-    color: rgba(0, 0, 0, 0);
-    margin-top: 50%;
-    transition: 0.5s;
+.project:hover > h3 {
+  top: 40%;
 }
 
-.project a:hover {
-    border: 2px solid #FFF;
+.project > p {
+  position: absolute;
+  top: 15%;
+  text-align: center;
+  width: 100%;
+  transition: 1s;
 }
 
-.project:hover p, .project:hover h3, .project:hover a {
-    color: #EEE;
+.project:hover > p {
+  top: 20%;
+}
+
+.project > .buttons {
+  position: absolute;
+  bottom: 20%;
+  text-align: center;
+  width: 100%;
+  transition: 1s;
+}
+
+.project:hover > .buttons {
+  bottom: 25%;
+}
+
+.project:before, .project:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  transition: 0.5s;
+}
+
+.project:hover:before, .project:hover:after {
+  width: 15%;
+  height: 15%;
+}
+
+.project:before {
+  top: 5px;
+  left: 5px;
+  border-top: 1px solid #FFF;
+  border-left: 1px solid #FFF;
+}
+
+.project:after {
+  bottom: 5px;
+  right: 5px;
+  border-right: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+}
+
+.project:hover:after {
+  bottom: 20px;
+  right: 20px;
+}
+
+.project:hover:before {
+  top: 20px;
+  left: 20px;
 }
 
 #contact {
@@ -359,6 +441,53 @@ textarea {
     font-size: 1.3em;
 }
 
+.fill {
+  transition: 0.5s;
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+  margin: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.fill:hover {
+  color: #222;
+}
+
+.fill:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #FFF;
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.fill:hover:before {
+  height: 100%;
+}
+
+.underline:before {
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  content: "";
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  transition: 0.5s;
+}
+
+.underline:hover:before {
+  background: rgba(255, 255, 255, 1);
+  left: 0%;
+  width: 100%;
+}
+
 
 /* non-mobile */
 @media only screen and (min-width: 48em) {
@@ -379,27 +508,6 @@ textarea {
     
     .nav {
         display: block;
-    }
-
-    .nav > a {
-        display: inline-block;
-        cursor: pointer;
-        
-        font-family: "Lato", sans-serif;
-        text-transform: uppercase;
-        text-decoration: none;
-        
-        border: 2px solid rgba(0, 0, 0, 0);
-        
-        height: 100%;
-        padding: 10px;
-        margin: 10px;
-        transition: 0.5s;
-    }
-    
-    .nav > a:hover {
-        border: 2px solid #FFF;
-        transition: 0.5s;
     }
 
 }

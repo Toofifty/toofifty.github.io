@@ -4,7 +4,7 @@
         <title>Alex Matheson &middot; Developer</title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-        <script async src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+        <script src="js/jquery.min.js"></script>
         <!--script src="js/processing.min.js"></script-->
         <script async src="js/main.js"></script>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -14,18 +14,18 @@
         <h1 onclick="scrollTo(0)">Alex Matheson</h1>
 
         <div class="nav">
-            <a onclick="scrollTo(0)">home</a>
-            <a onclick="scrollTo('#about')">about</a>
-            <a onclick="scrollTo('#portfolio')">portfolio</a>
-            <a onclick="scrollTo('#contact')">contact</a>
+            <a onclick="scrollTo(0)" class="btn btn-main btn-sel" id="scr-home">home</a>
+            <a onclick="scrollTo('#about')" class="btn btn-main" id="scr-about">about</a>
+            <a onclick="scrollTo('#portfolio')" class="btn btn-main" id="scr-portfolio">portfolio</a>
+            <a onclick="scrollTo('#contact')" class="btn btn-main" id="scr-contact">contact</a>
         </div>
 
         <div id="home">
             <div class="dark-rect">
                 <div class="title">
                     <h2>software engineer &middot; app developer &middot; web designer</h2><br/>
-                    <a onclick="scrollTo('#contact')" class="button">contact</a>
-                    <a onclick="scrollTo('#portfolio')" class="button">portfolio</a>
+                    <a onclick="scrollTo('#contact')" class="btn btn-main">contact</a>
+                    <a onclick="scrollTo('#portfolio')" class="btn btn-main">portfolio</a>
                 </div>
             </div>
         </div>
@@ -170,7 +170,7 @@
                         </tr>
                     </table>
                 </div>
-                <h2>Frameworks</h2>
+                <h2>Frameworks // Libraries</h2>
                 <div class="skills-container">
                     <table class="skills-table">
                         
@@ -374,16 +374,20 @@
                     <div class="project">
                         <p>iPhone &amp; Android app &middot; Fuse</p>
                         <h3>Suttons House of Music</h3>
-                        <a href="https://itunes.apple.com/us/app/suttons-house-of-music/id1041774516">Google Play</a>
-                        <a href="https://play.google.com/store/apps/details?id=me.matho.suttons&hl=en">Apple Store</a>
+                        <div class="buttons">
+                            <a href="https://itunes.apple.com/us/app/suttons-house-of-music/id1041774516" class="btn">Google Play</a>
+                            <a href="https://play.google.com/store/apps/details?id=me.matho.suttons&hl=en" class="btn">Apple Store</a>
+                        </div>
                     </div>
-                    <img src="img/suttons.jpg" />
+                    <img src="img/suttons.jpg" height="300" width="300"/>
                 </div>
                 <div class="project-container">
                     <div class="project">
                         <p>Interactive animations &middot; Processing/Java</p>
                         <h3>p5</h3>
-                        <a href="http://github.com/Toofifty/p5">Github</a>
+                        <div class="buttons">
+                            <a href="http://github.com/Toofifty/p5" class="btn">Github</a>
+                        </div>
                     </div>
                     <img src="img/p5.png" />
                 </div>
@@ -391,7 +395,9 @@
                     <div class="project">
                         <p>Minecraft plugin &middot; Java</p>
                         <h3>RapidIRC</h3>
-                        <a href="https://github.com/Toofifty/rapidirc">Github</a>
+                        <div class="buttons">
+                            <a href="https://github.com/Toofifty/rapidirc" class="btn">Github</a>
+                        </div>
                     </div>
                     <img src="img/rapidirc.png" />
                 </div>
@@ -399,8 +405,10 @@
                     <div class="project">
                         <p>Multiplayer game &middot; Unity</p>
                         <h3>Spectrum</h3>
-                        <a href="https://github.com/Toofifty/spectrum">Github</a>
-                        <a href="#">Play in browser</a>
+                        <div class="buttons">
+                            <a href="https://github.com/Toofifty/spectrum" class="btn">Github</a>
+                            <a href="#" class="btn">Play in browser</a>
+                        </div>
                     </div>
                     <img src="img/spectrum.png" />
                 </div>
@@ -408,7 +416,9 @@
                     <div class="project">
                         <p>IRC Bot &middot; Python</p>
                         <h3>Oracle</h3>
-                        <a href="https://github.com/Toofifty/oracle3">Github</a>
+                        <div class="buttons">
+                            <a href="https://github.com/Toofifty/oracle3" class="btn">Github</a>
+                        </div>
                     </div>
                     <img src="img/oracle.png" />
                 </div>
@@ -416,8 +426,10 @@
                     <div class="project">
                         <p>Reddit Bot &middot; Python</p>
                         <h3>The Great Sub</h3>
-                        <a href="https://github.com/Toofifty/the-great-sub">Github</a>
-                        <a href="http://reddit.com/r/thegreatsub">Subreddit</a>
+                        <div class="buttons">
+                            <a href="https://github.com/Toofifty/the-great-sub" class="btn">Github</a>
+                            <a href="http://reddit.com/r/thegreatsub" class="btn">Subreddit</a>
+                        </div>
                     </div>
                     <img src="img/thegreatsub.png" />
                 </div>
@@ -425,7 +437,9 @@
                     <div class="project">
                         <p>Webpage and portfolio &middot; HTML, CSS, JS</p>
                         <h3>Personal webpage</h3>
-                        <a href="https://github.com/Toofifty/toofifty.github.io">Github</a>
+                        <div class="buttons">
+                            <a href="https://github.com/Toofifty/toofifty.github.io" class="btn">Github</a>
+                        </div>
                     </div>
                     <img src="img/webpage.png" />
                 </div>
@@ -433,20 +447,24 @@
                     <div class="project">
                         <p>Programming challenges &middot; Python, Java</p>
                         <h3>Project Euler Challenges</h3>
-                        <a href="https://github.com/Toofifty/project-euler">Github</a>
+                        <div class="buttons">
+                            <a href="https://github.com/Toofifty/project-euler" class="btn">Github</a>
+                        </div>
                     </div>
                     <img src="img/euler.png" />
                 </div>
                 <div class="project-container">
                     <div class="project">
                         <p>More of my projects</p>
-                        <a href="https://github.com/Toofifty">Github</a>
+                        <div class="buttons">
+                            <a href="https://github.com/Toofifty" class="btn">Github</a>
+                        </div>
                     </div>
                     <img src="img/avatar.png" />
                 </div>
             </div>
         </div>
-        <div id="contact">
+        <div id="contact" style="height:100vh">
             <div class="content">
                 <h2>Contact</h2>
                 <form action="http://formspree.io/amatho250@gmail.com" method="post">
