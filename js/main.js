@@ -9,7 +9,8 @@ $(document).ready(function() {
 
     // change navbar
 
-    if (scroll > anchor) {
+    if (scroll > anchor && sel == "#scr-home") {
+      console.log("change");
       $('.nav').css({
         'background': '#222',
         'box-shadow': '0px 2px 10px rgba(0,0,0,0.3)'
@@ -24,7 +25,8 @@ $(document).ready(function() {
         'margin-top': '3px',
         'margin-bottom': '3px'
       });
-    } else {
+    } else if (scroll < anchor && sel != "#scr-home") {
+      console.log("change2");
       $('.nav').css({
         'background': 'rgba(0, 0, 0, 0)',
         'box-shadow': 'none'
