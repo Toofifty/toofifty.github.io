@@ -1,0 +1,183 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+* {
+	color: #FFF;
+	font-family: "Lato", sans-serif;
+}
+
+a { cursor: pointer; }
+
+body {
+	background: #222;
+	margin: 0;
+}
+
+/*** Generic ***/
+
+/* Background-fill button */
+.btn {
+	display: inline-block;
+	padding: 10px;
+	position: relative;
+	text-decoration: none;
+	transition: 0.5s;
+}
+	/* Button hover is handled by jQuery
+	   to allow for changing colours */
+	.btn:hover {}
+
+	/* Button hover background */
+	.btn:after {
+		background: #FFF;
+		bottom: 0;
+		content: "";
+		height: 0px;
+		left: 0;
+		position: absolute;
+		transition: 0.5s;
+		width: 100%;
+		z-index: -1;
+	}
+	.btn:hover:after { height: 100%; }
+
+	/* Selected button */
+	.btn-sel:after { height: 2px; }
+
+	/* Navigation buttons */
+	.btn-nav {
+		margin: 10px;
+		text-transform: uppercase;
+	}
+
+/*** Header items ***/
+
+.logo {
+	display: inline-block;
+	font-size: 1.2em;
+	left: 0;
+	margin: 13px;
+	padding: 5px;
+	position: fixed;
+	text-transform: uppercase;
+	top: 0;
+	transition: 0.5s;
+	z-index: 2;
+}
+
+.nav {
+	margin: 0;
+	position: fixed;
+	right: 0;
+	text-align: right;
+	top: 0;
+	transition: 0.5s;
+	width: 100%;
+	z-index: 2;
+}
+
+/*** Home/landing panel ***/
+
+#home {
+	height: 100vh;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+	.color-fill {
+		/* vv- default background color */
+		background: hsl(0, 50%, 50%);
+		height: 100%;
+		position: fixed;
+		width: 100%;
+		transition: 0.5s;
+	}
+
+	.title-container {
+		margin-top: 35vh;
+		margin-left: auto;
+		margin-right: auto;
+		min-width: 200px;
+		position: relative;
+		width: 40%;
+	}
+
+		.title-container:before, .title-container:after {
+			border: 1px solid rgba(0,0,0,0);
+			content: "";
+			height: 10%;
+			position: absolute;
+			width: 10%;
+		}
+
+		.title-container:before {
+			border-top: 1px solid #FFF;
+			border-left: 1px solid #FFF;
+			left: -5px;
+			top: -5px;
+		}
+
+		.title-container:after {
+			border-bottom: 1px solid #FFF;
+			border-right: 1px solid #FFF;
+			bottom: -5px;
+			right: -5px;
+		}
+
+	.title {
+		overflow: hidden;
+		padding: 0px;
+		padding-bottom: 1.5em;
+		position: relative;
+		text-align: center;
+		text-transform: uppercase;
+		transition: 1s;
+	}
+
+		.title:after {
+			background: #FFF;
+			content: "";
+			height: 0;
+			left: -50%;
+			position: absolute;
+			top: 50%;
+			width: 200%;
+			transform: rotate(20deg);
+			transform-origin: 50% 50%;
+			transition: 2s;
+			z-index: -1;
+		}
+
+		.title:hover:after {
+			top: -225%;
+			height: 500%;
+		}
+
+		.title-left, .title-right, .buzzword {
+			display: inline-block;
+			font-size: 1em;
+			letter-spacing: 0.3em;
+			line-height: 1.5em;
+			margin: 10px;
+			transition: 0.5s;
+			width: 30%;
+		}
+
+		.title-left {
+			text-align: right;
+		}
+
+		.title-right > h2 {
+			transition: 0.5s;
+		}
+
+		.buzzword {
+			display: block;
+			margin: 0;
+		}
+
+		.buzzword-hidden {
+			color: rgba(0,0,0,0) !important;
+		}
+

@@ -1,20 +1,25 @@
 $(document).ready(function() {
 
   var sel = "#scr-home";
+  var perc = 0;
 
   $(document).scroll(function (e) {
 
     var scroll = $(this).scrollTop();
     var anchor = $("#about").offset().top;
 
+    perc = scroll / $(document).innerHeight();
+
+    // update dependent classes
+
+    $(".nav, .dark-rect").css("background", "hsl(" + perc * 255 + ", 50%, 50%)");
+    $(".knockout").css("color", "hsl(" + perc * 255 + ", 50%, 50%)");
+
     // change navbar
 
     if (scroll > anchor && sel == "#scr-home") {
       console.log("change");
-      $('.nav').css({
-        'background': '#222',
-        'box-shadow': '0px 2px 10px rgba(0,0,0,0.3)'
-      });
+      $('.nav').addClass("solid-nav");
       $('.nav > a').css({
         'padding-top': '5px',
         'padding-bottom': '5px',
@@ -27,10 +32,7 @@ $(document).ready(function() {
       });
     } else if (scroll < anchor && sel != "#scr-home") {
       console.log("change2");
-      $('.nav').css({
-        'background': 'rgba(0, 0, 0, 0)',
-        'box-shadow': 'none'
-      });
+      $('.nav').removeClass("solid-nav");
       $('.nav > a').css({
         'padding-top': '10px',
         'padding-bottom': '10px',
@@ -62,6 +64,15 @@ $(document).ready(function() {
       set("#scr-contact");
     }
 
+  });
+
+  $(".btn").mouseover(function() {
+    $(this).addClass("knockout");
+    $(".knockout").css("color", "hsl(" + perc * 255 + ", 50%, 50%)");
+  }).mouseout(function() {
+    if ($(this).attr("id") == sel.replace("#", "")) return;
+    $(this).removeClass("knockout");
+    $(this).css("color", "#FFF");
   });
 
 });
