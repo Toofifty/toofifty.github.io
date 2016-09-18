@@ -1,8 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Lato|Raleway);
 
 * {
-	color: #FFF;
-	font-family: "Lato", sans-serif;
 }
 
 a { cursor: pointer; }
@@ -14,9 +12,44 @@ body {
 
 /*** Generic ***/
 
+.ko-bg {
+	background: hsl(0, 50%, 50%);
+}
+
+/*** Content ***/
+.content {
+	font-family: "Lato", sans-serif;
+	margin: 0 auto;
+	padding: 10px 15%;
+	padding-bottom: 50px;
+}
+
+.content > h2 {
+	margin: 0;
+	padding: 60px 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.content-dark {
+	background: #222;
+	color: #FFF;
+}
+
+.content-light {
+	background: #EEE;
+	color: #222;
+}
+
+/* Recoloured on scroll, does not work 
+   properly if the colour is pre-set here */
+.ko-hover {}
+
 /* Background-fill button */
 .btn {
+	color: #FFF;
 	display: inline-block;
+	font-family: "Lato", sans-serif;
 	padding: 10px;
 	position: relative;
 	text-decoration: none;
@@ -52,7 +85,9 @@ body {
 /*** Header items ***/
 
 .logo {
+	color: #FFF;
 	display: inline-block;
+	font-family: "Lato", sans-serif;
 	font-size: 1.2em;
 	left: 0;
 	margin: 13px;
@@ -65,6 +100,7 @@ body {
 }
 
 .nav {
+	color: #FFF;
 	margin: 0;
 	position: fixed;
 	right: 0;
@@ -78,6 +114,7 @@ body {
 /*** Home/landing panel ***/
 
 #home {
+	font-family: "Lato", sans-serif;
 	height: 100vh;
 	left: 0;
 	position: fixed;
@@ -91,7 +128,6 @@ body {
 		height: 100%;
 		position: fixed;
 		width: 100%;
-		transition: 0.5s;
 	}
 
 	.title-container {
@@ -126,9 +162,9 @@ body {
 		}
 
 	.title {
+		color: #FFF;
 		overflow: hidden;
-		padding: 0px;
-		padding-bottom: 1.5em;
+		padding: 2px;
 		position: relative;
 		text-align: center;
 		text-transform: uppercase;
@@ -142,10 +178,10 @@ body {
 			left: -50%;
 			position: absolute;
 			top: 50%;
-			width: 200%;
-			transform: rotate(20deg);
+			transform: rotate(-20deg);
 			transform-origin: 50% 50%;
 			transition: 2s;
+			width: 200%;
 			z-index: -1;
 		}
 
@@ -166,10 +202,16 @@ body {
 
 		.title-left {
 			text-align: right;
+			padding-bottom: 1.5em;
 		}
 
 		.title-right > h2 {
 			transition: 0.5s;
+		}
+
+		.title-cover {
+			position: relative;
+			width: 100%;
 		}
 
 		.buzzword {
@@ -180,4 +222,321 @@ body {
 		.buzzword-hidden {
 			color: rgba(0,0,0,0) !important;
 		}
+
+/*** About section ***/
+#about {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	margin-top: calc(100vh - 250px);
+	position: relative;
+	width: 100%;
+}
+
+	#about > .content {
+		padding: 10px 20%;
+	}
+
+	.avatar {
+		border-radius: 50%;
+		display: inline-block;
+		float: left;
+		margin-right: 2%;
+		vertical-align: middle;
+	}
+
+	.blurb {
+		color: #888;
+		display: block;
+		font-family: "Raleway" !important;
+		padding: 20px;
+		margin-top: auto;
+		margin-bottom: auto;
+		min-height: 200px;
+	}
+
+		.blurb > p {
+			line-height: 2em;
+			margin: 0;
+		}
+
+	.skills-container {
+		text-align: center;
+		width: 100%;
+	}
+
+		.skill {
+			background: #DDD;
+			border: 1px solid #DDD;
+			display: inline-block;
+      		height: 3em;
+			margin: 0.5%;
+			min-width: 100px;
+			overflow: hidden;
+			position: relative;
+			text-align: center;
+			width: 15%;
+		}
+
+		.skill-progress {
+			background: #AAA;
+			height: 100%;
+			position: absolute;
+      		transition: 0.5s;
+		}
+
+		.skill-title {
+      		background: #EEE;
+			color: #000;
+			height: 2.0em;
+      		margin: 0;
+			padding-top: 0.6em;
+			position: relative;
+			transition: 0.5s;
+		}
+
+		.skill-time {
+			color: rgba(0,0,0,0);
+			font-size: 0.8em;
+    		height: 0;
+			margin: 4px;
+			position: relative;
+			transition: 0.25s;
+		}
+
+		.skill-time:after {
+			content: " experience";
+		}
+
+		.skill:hover .skill-title {
+			font-size: 0.95em;
+			height: 1.4em;
+			padding-top: 0.2em;
+			transition: 0.25s;
+		}
+
+		.skill:hover .skill-progress {
+			transition: 0.5s;
+			width: 100% !important;
+		}
+
+		.skill:hover .skill-time {
+			color: #FFF;
+		}
+
+/*** Portfolio section ***/
+#portfolio { position: relative; }
+
+	#portfolio > .content {
+		padding: 10px 5%;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.project-container {
+		background: #333;
+		display: inline-block;
+		height: 300px;
+		margin: 1.5%;
+		position: relative;
+		width: 90%;
+		width: 300px;
+	}
+
+	.project-container > img {
+		height: 100%;
+		width: 100%;
+	}
+
+	.project {
+		background: rgba(0, 0, 0, 0.75);
+		color: #FFF;
+		height: 100%;
+		opacity: 0;
+		position: absolute;
+		text-align: center;
+		transition: 0.5s;
+		width: 100%;
+	}
+
+		.project > h3 {
+			position: absolute;
+			text-align: center;
+			text-transform: uppercase;
+			top: 38%;
+			transition: 0.5s;
+			width: 100%;
+		}
+
+		.project > p {
+			position: absolute;
+			text-align: center;
+			top: 15%;
+			transition: 1s;
+			width: 100%;
+		}
+
+		.project > .project-btns {
+			bottom: 20%;
+			position: absolute;
+			text-align: center;
+			transition: 1s;
+			width: 100%;
+			z-index: 1;
+		}
+
+		.project:before, .project:after {
+			content: "";
+			height: 0;
+			position: absolute;
+			transition: 0.5s;
+			width: 0;
+		}
+
+			.project:before {
+				border-left: 2px solid #FFF;
+				border-top: 2px solid #FFF;
+				left: 5px;
+				top: 5px;
+			}
+
+			.project:after {
+				border-bottom: 2px solid #FFF;
+				border-right: 2px solid #FFF;
+				bottom: 5px;
+				right: 5px;
+			}
+
+		.project:hover:before, .project:hover:after {
+			height: 15%;
+			width: 15%;
+		}
+
+			.project:hover:after {
+				bottom: 20px;
+				right: 20px;
+			}
+
+			.project:hover:before {
+				left: 20px;
+				top: 20px;
+			}
+
+		.project:hover { opacity: 1; }
+
+			.project:hover > h3 { top: 40%; }
+
+			.project:hover > p  { top: 20%; }
+
+			.project:hover > .project-btns { bottom: 25%; }
+
+
+/*** Contact section ***/
+#contact {
+	background: #EEE;
+	position: relative;
+	width: 100%;
+}
+
+	#contact > .content {
+		padding-bottom: 50px;
+		text-align: center;
+	}
+
+	.ext-link {
+		transform: scale(0.5);
+		transition: 0.5s;
+	}
+
+	.ext-link:hover {
+		transform: scale(0.7);
+		transition: 0.25s;
+	}
+
+	.form-input {
+		background: #222;
+		color: #FFF;
+		display: block;
+		height: 50px;
+		margin: 0 auto 40px;
+		max-width: 600px;
+		width: 90%;
+	}
+
+		.form-input label {
+			float: left;
+			padding: 15px 0;
+			text-transform: uppercase;
+			width: 30%;
+		}
+
+		.form-input input {
+			border: none;
+			color: #222;
+			font-size: 1.3em;
+			height: calc(100% - 20px);
+			padding: 10px;
+			width: calc(70% - 20px);
+		}
+
+		.form-input button {
+			background: none;
+			border: 2px solid #222;
+			color: #FFF;
+			font-size: 1em;
+			height: 100%;
+			text-transform: uppercase;
+			transition: 0.5s;
+			width: 100%;
+		}
+
+		.form-input button:hover {
+			background: #000;
+			border: 2px solid #FFF;
+			cursor: pointer;
+			transition: 0.5s;
+		}
+
+		.form-input + .msg {
+			height: 250px;
+		}
+
+		textarea {
+			border: none;
+			color: #222;
+			font-size: 1.3em;
+			height: calc(100% - 20px);
+			padding: 10px;
+			resize: none;
+			width: calc(70% - 20px);
+		}
+
+@media only screen and (max-width: 48em) {
+
+	.nav {
+		display: none;
+	}
+
+	.title-container {
+		margin-top: 20vh;
+		width: 90%;
+	}
+
+	#about {
+		margin-top: calc(50vh);
+	}
+
+	#about > .content, .content {
+		padding: 10px 5%;
+	}
+
+	#about {
+	}
+
+		.avatar {
+			display: block;
+			float: none;
+			margin: 0 auto;
+			padding: 20px;
+		}
+
+}
 
