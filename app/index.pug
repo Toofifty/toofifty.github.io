@@ -1,0 +1,102 @@
+doctype html
+html(lang="en")
+  head
+    title="Alex Matheson · web"
+    meta(name='viewport' content ='width=device-width, initial-scale=1, user-scalable=no')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content ='IE=edge')
+    link(rel="stylesheet" href="https://unpkg.com/purecss@0.6.0/build/grids-responsive-min.css")
+  body
+    .nav
+      h1 Alex Matheson
+      a#home-btn.btn.nav-btn Home
+      a#about-btn.btn.nav-btn About
+      a#portfolio-btn.btn.nav-btn Portfolio
+      a#contact-btn.btn.nav-btn Contact
+    .title-card-container
+      .title Alex Matheson
+      .blurb web &middot; mobile &middot; designer &middot; developer
+    .down v
+    .pages
+      .page
+        .sub-page.pure-u-md-1-3
+          h1 _
+          img.daft(src=require('./img/me.png'))
+        .sub-page.pure-u-md-1-3
+          h1 About
+          .content
+            p I'm Alex Matheson. A Bachelor of Software Engineering student at
+              |  RMIT, Melbourne and a Junior Web Developer at Kobe Creations.
+            p I have a strong passion for design and programming which comes
+              |  together when I create websites and apps.
+        .sub-page.pure-u-md-1-3
+          h1 Skills
+          .content
+            p
+              - var web = ["HTML5", "CSS3", "JS", "Node", "Bootstrap", "Angular",
+              - "Vue", "jQuery", "Pug", "Sass", "Three", "WordPress", "Django"]
+              each skill in web
+                span.tab-skill= skill
+              - var mobile = ["Cordova", "Fuse", "Xcode"]
+              each skill in mobile
+                span.tab-skill= skill
+              - var scripting = ["Python", "Perl", "SQL", "Bash", "Lua", "PHP"]
+              each skill in scripting
+                span.tab-skill= skill
+      .page.alternate
+        .sub-page.pure-u-1
+          h1 Portfolio
+          .content
+            .portfolio
+              .item
+                .pure-u-md-1-3
+                  img(src=require('./img/suttons.jpg'))
+                .content.pure-u-md-2-3
+                  h1 Suttons House of Music
+                  .content Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    |  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    |  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    |  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    |  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    |  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    |  culpa qui officia deserunt mollit anim id est laborum.
+              .item
+                .pure-u-md-1-3
+                  img(src=require('./img/p5.png'))
+                .content.pure-u-md-2-3
+                  h1 Processing Projects
+                  .content Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    |  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    |  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    |  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                    |  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    |  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    |  culpa qui officia deserunt mollit anim id est laborum.
+      .page
+        .sub-page.pure-u-1
+          h1 Contact
+          .content
+            form(action="http://formspree.io/amatho250@gmail.com" method="post")
+              .form-input
+                label name
+                input(type="text" default="name" name="name")
+              .form-input
+                label email
+                input(type="text" default="email" name="email")
+              .form-input
+                label subject
+                input(type="text" default="subject" name="subject")
+              .form-input.msg
+                label message
+                input(type="textarea" default="message" name="message")
+      .page
+        .sub-page.pure-u-1
+          .content(style="text-align:center")
+            a(href="http://github.com/Toofifty")
+              img.ext-link(src=require('./img/github.svg') type="image/svg+xml")
+            a(href="http://github.com/Toofifty")
+              img.ext-link(src=require('./img/googleplus.svg') type="image/svg+xml")
+            a(href="http://github.com/Toofifty")
+              img.ext-link(src=require('./img/linkedin.svg') type="image/svg+xml")
+            a(href="http://github.com/Toofifty")
+              img.ext-link(src=require('./img/twitter.svg') type="image/svg+xml")

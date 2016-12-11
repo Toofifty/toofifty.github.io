@@ -1,4 +1,4 @@
-Toofifty.github.io
-==================
+matho.me development repository
+===============================
 
-Personal website page
+Contains webpack development files for the live site at [matho.me](matho.me) (hosted from toofifty.github.io)
