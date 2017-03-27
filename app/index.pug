@@ -16,7 +16,8 @@ html(lang="en")
     .title-card-container
       .title Alex Matheson
       .blurb web &middot; mobile &middot; designer &middot; developer
-    .down v
+    .down
+      p v
     .pages
       .page
         .sub-page.pure-u-md-1-3
@@ -53,30 +54,49 @@ html(lang="en")
                   img(src=require('./img/suttons.jpg'))
                 .content.pure-u-md-2-3
                   h1 Suttons House of Music
-                  .content Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    |  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    |  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                    |  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    |  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    |  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    |  culpa qui officia deserunt mollit anim id est laborum.
+                  .content An events app created for a local music venue, built for both 
+                    | iOS and Android. Originally created in a very buggy version of Polymer 
+                    | with Cordova, the app was eventually recreated using the Fuse framework. 
+                    | It lists events, specials and shows a gallery. The backend is hosted on 
+                    | Google Spreadsheets.
+                .clear
               .item
                 .pure-u-md-1-3
                   img(src=require('./img/p5.png'))
                 .content.pure-u-md-2-3
                   h1 Processing Projects
-                  .content Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    |  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    |  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                    |  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    |  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    |  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    |  culpa qui officia deserunt mollit anim id est laborum.
+                  .content A collection of small animations / games / simulations / thingy-majigs created in 
+                    | Processing (easy-mode Java/OpenGL). The collection has been building over 
+                    | the past few years and my improvements in Java can definitely be seen in the 
+                    | most recent sketches. Fun to download and play around with (you'll need to install 
+                    | Processing).
+                .clear
+              .item
+                .pure-u-md-1-3
+                  img(src=require('./img/thegreatsub.png'))
+                .content.pure-u-md-2-3
+                  h1 Reddit Bot - "The Great Sub"
+                  .content A Reddit bot written in Python using the PRAW library. It sits in the comments 
+                    | input stream (for the entirety of Reddit), and every once in a while picks a comment, 
+                    | goes to it's subreddit, and re-posts the top post of all time back to the /r/thegreatsub. 
+                    | It's a good way to discover many niche subreddits. 
+                .clear
+              .item
+                .pure-u-md-1-3
+                  img(src=require('./img/oracle.png'))
+                .content.pure-u-md-2-3
+                  h1 IRC Bot - "Oracle"
+                  .content Once again in Python, Oracle is an IRC Bot that can respond to questions, perform 
+                    | tasks, can save reminders and mail, and runs mini-games like Tic Tac Toe, trivia, and 
+                    | lotteries. It has been through 3 (maybe 4?) iterations, each built from the ground up using whatever 
+                    | new programming practice I had discovered. The latest one is modular, meaning it is simple
+                    | to add / remove modules, commands and functionality by changing single Python files.
+                .clear
       .page
         .sub-page.pure-u-1
           h1 Contact
           .content
-            form(action="http://formspree.io/amatho250@gmail.com" method="post")
+            form(action="http://formspree.io/alex@matho.me" method="post")
               .form-input
                 label name
                 input(type="text" default="name" name="name")
@@ -88,7 +108,10 @@ html(lang="en")
                 input(type="text" default="subject" name="subject")
               .form-input.msg
                 label message
-                input(type="textarea" default="message" name="message")
+                textarea(type="textarea" default="message" name="message")
+              .form-input
+                label 
+                button(type="submit") Submit
       .page
         .sub-page.pure-u-1
           .content(style="text-align:center")
