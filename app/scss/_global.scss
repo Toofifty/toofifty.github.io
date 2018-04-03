@@ -1,0 +1,36 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+
+    --base-color: #222;
+
+    background: var(--base-color);
+    color: white;
+
+    @media (min-width: $screen-sm) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+
+    canvas {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+}
+
+h1.title {
+    font-family: $font-title;
+    text-transform: uppercase;
+}

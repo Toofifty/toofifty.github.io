@@ -1,125 +1,17 @@
 doctype html
 html(lang="en")
-  head
-    title="Alex Matheson · web"
-    meta(name='viewport' content ='width=device-width, initial-scale=1, user-scalable=no')
-    meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content ='IE=edge')
-    link(rel="stylesheet" href="https://unpkg.com/purecss@0.6.0/build/grids-responsive-min.css")
-  body
-    .nav
-      h1 Alex Matheson
-      a#home-btn.btn.nav-btn Home
-      a#about-btn.btn.nav-btn About
-      a#portfolio-btn.btn.nav-btn Portfolio
-      a#contact-btn.btn.nav-btn Contact
-    .title-card-container
-      .title Alex Matheson
-      .blurb web &middot; mobile &middot; designer &middot; developer
-    .down
-      p v
-    .pages
-      .page
-        .sub-page.pure-u-md-1-3
-          h1 _
-          img.daft(src=require('./img/me.png'))
-        .sub-page.pure-u-md-1-3
-          h1 About
-          .content
-            p I'm Alex Matheson. A Bachelor of Software Engineering student at
-              |  RMIT, Melbourne and a Junior Web Developer at Kobe Creations.
-            p I have a strong passion for design and programming which comes
-              |  together when I create websites and apps.
-        .sub-page.pure-u-md-1-3
-          h1 Skills
-          .content
-            p
-              - var web = ["HTML5", "CSS3", "JS", "Node", "Bootstrap", "Angular",
-              - "Vue", "jQuery", "Pug", "Sass", "Three", "WordPress", "Django"]
-              each skill in web
-                span.tab-skill= skill
-              - var mobile = ["Cordova", "Fuse", "Xcode"]
-              each skill in mobile
-                span.tab-skill= skill
-              - var scripting = ["Python", "Perl", "SQL", "Bash", "Lua", "PHP"]
-              each skill in scripting
-                span.tab-skill= skill
-      .page.alternate
-        .sub-page.pure-u-1
-          h1 Portfolio
-          .content
-            .portfolio
-              .item
-                .pure-u-md-1-3
-                  img(src=require('./img/suttons.jpg'))
-                .content.pure-u-md-2-3
-                  h1 Suttons House of Music
-                  .content An events app created for a local music venue, built for both 
-                    | iOS and Android. Originally created in a very buggy version of Polymer 
-                    | with Cordova, the app was eventually recreated using the Fuse framework. 
-                    | It lists events, specials and shows a gallery. The backend is hosted on 
-                    | Google Spreadsheets.
-                .clear
-              .item
-                .pure-u-md-1-3
-                  img(src=require('./img/p5.png'))
-                .content.pure-u-md-2-3
-                  h1 Processing Projects
-                  .content A collection of small animations / games / simulations / thingy-majigs created in 
-                    | Processing (easy-mode Java/OpenGL). The collection has been building over 
-                    | the past few years and my improvements in Java can definitely be seen in the 
-                    | most recent sketches. Fun to download and play around with (you'll need to install 
-                    | Processing).
-                .clear
-              .item
-                .pure-u-md-1-3
-                  img(src=require('./img/thegreatsub.png'))
-                .content.pure-u-md-2-3
-                  h1 Reddit Bot - "The Great Sub"
-                  .content A Reddit bot written in Python using the PRAW library. It sits in the comments 
-                    | input stream (for the entirety of Reddit), and every once in a while picks a comment, 
-                    | goes to it's subreddit, and re-posts the top post of all time back to the /r/thegreatsub. 
-                    | It's a good way to discover many niche subreddits. 
-                .clear
-              .item
-                .pure-u-md-1-3
-                  img(src=require('./img/oracle.png'))
-                .content.pure-u-md-2-3
-                  h1 IRC Bot - "Oracle"
-                  .content Once again in Python, Oracle is an IRC Bot that can respond to questions, perform 
-                    | tasks, can save reminders and mail, and runs mini-games like Tic Tac Toe, trivia, and 
-                    | lotteries. It has been through 3 (maybe 4?) iterations, each built from the ground up using whatever 
-                    | new programming practice I had discovered. The latest one is modular, meaning it is simple
-                    | to add / remove modules, commands and functionality by changing single Python files.
-                .clear
-      .page
-        .sub-page.pure-u-1
-          h1 Contact
-          .content
-            form(action="http://formspree.io/alex@matho.me" method="post")
-              .form-input
-                label name
-                input(type="text" default="name" name="name")
-              .form-input
-                label email
-                input(type="text" default="email" name="email")
-              .form-input
-                label subject
-                input(type="text" default="subject" name="subject")
-              .form-input.msg
-                label message
-                textarea(type="textarea" default="message" name="message")
-              .form-input
-                label 
-                button(type="submit") Submit
-      .page
-        .sub-page.pure-u-1
-          .content(style="text-align:center")
-            a(href="http://github.com/Toofifty")
-              img.ext-link(src=require('./img/github.svg') type="image/svg+xml")
-            a(href="http://github.com/Toofifty")
-              img.ext-link(src=require('./img/googleplus.svg') type="image/svg+xml")
-            a(href="http://github.com/Toofifty")
-              img.ext-link(src=require('./img/linkedin.svg') type="image/svg+xml")
-            a(href="http://github.com/Toofifty")
-              img.ext-link(src=require('./img/twitter.svg') type="image/svg+xml")
+    head
+        title="Alex Matheson · web"
+        meta(name='viewport' content ='width=device-width, initial-scale=1, user-scalable=no')
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content ='IE=edge')
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel|Gudea|Open+Sans")
+    block body
+        .background
+            canvas#polygen
+        include components/nav.pug
+        .content-switch
+            include components/home.pug
+            include components/about.pug
+            include components/projects.pug
+            include components/contact.pug

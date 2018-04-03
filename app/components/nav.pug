@@ -1,0 +1,25 @@
+.navbar
+    a(href="/"): h1.title Matho
+    .page-nav-container
+        ul.page-nav
+            li.page-nav-entry: a.page-nav-link.home(onclick='goto("")')
+                span Home
+                include ../img/home.svg
+            li.page-nav-entry: a.page-nav-link.about(onclick='goto("about")')
+                span About
+                include ../img/about.svg
+            li.page-nav-entry: a.page-nav-link.projects(onclick='goto("projects")')
+                span Projects
+                include ../img/projects.svg
+            li.page-nav-entry: a.page-nav-link.contact(onclick='goto("contact")')
+                span Contact
+                include ../img/contact.svg
+    ul.page-nav.external-links
+        li.page-nav-entry.external-link: a.page-nav-link(href="https://github.com/Toofifty/" target="_blank")
+            span LinkedIn
+            include ../img/linkedin.svg
+        li.page-nav-entry.external-link: a.page-nav-link(href="https://www.linkedin.com/in/alex-matho/" target="_blank")
+            span Github
+            include ../img/github.svg
+
+            

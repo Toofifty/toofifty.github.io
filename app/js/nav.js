@@ -1,25 +1,42 @@
-var $ = require('jquery')
+let currentPage = null
 
-function scrollTo (element) {
-  var pos = 0
-  if (element != 0) pos = $(element).offset().top - 80
-  $('html, body').animate({scrollTop: pos}, 'slow')
+const removeClass = (el, cls) => {
+    el.className = el.className.replace(cls, '').replace(' ' + cls, '')
 }
 
-$(document).ready(function () {
-  $(document).scroll(function (e) {
-    var scrollValue = $(this).scrollTop()
-    var anchor = 100 // $('.pages').offset().top
-    var $nav = $('.nav')
-    if (scrollValue > anchor && !$nav.hasClass('solid')) {
-      $nav.addClass('solid')
-    } else if (scrollValue < anchor && $nav.hasClass('solid')) {
-      $nav.removeClass('solid')
+const updateNav = page => {
+    page = page ? page : 'home'
+    document.body.className = page
+    if (currentPage && currentPage !== page) {
+        const divOut = document.querySelectorAll(`.content.${currentPage}`)[0]
+        const divIn = document.querySelectorAll(`.content.${page}`)[0]
+        console.log(divOut, divIn)
+        // unhide divIn
+        removeClass(divIn, 'hidden')
+        const goingDown = divOut.getAttribute('data-index') > divIn.getAttribute('data-index')
+        if (goingDown) {
+            // go down
+            divOut.className += ' going-down'
+            divIn.className += ' coming-down'
+        } else {
+            // go up
+            divOut.className += ' going-up'
+            divIn.className += ' coming-up'
+        }
+        setTimeout(() => {
+            if (goingDown) {
+                removeClass(divOut, 'going-down')
+                removeClass(divIn, 'coming-down')
+            } else {
+                removeClass(divOut, 'going-up')
+                removeClass(divIn, 'coming-up')
+            }
+            divOut.className += ' hidden'
+        }, 990)
     }
-    $('.down').css('opacity', Math.max(1 - scrollValue / 500, 0))
-  })
-  $('#home-btn').click(function () { scrollTo(0) })
-  $('#about-btn, .down').click(function () { scrollTo('.page:nth-child(1)') })
-  $('#portfolio-btn').click(function () { scrollTo('.page:nth-child(2)') })
-  $('#contact-btn').click(function () { scrollTo('.page:nth-child(3)') })
-})
+    currentPage = page
+}
+
+updateNav()
+
+export default updateNav

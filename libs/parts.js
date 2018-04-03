@@ -36,6 +36,11 @@ exports.loadFiles = function () {
         {
           test: /\.svg$/,
           loader: 'file'
+        },
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader'
         }
       ]
     }

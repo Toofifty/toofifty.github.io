@@ -1,0 +1,114 @@
+
+.navbar {
+    height: $nav-item-size;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-family: $font-title;
+    text-transform: uppercase;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+
+    background: #222;
+    color: var(--base-color);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+
+    @media (min-width: $screen-sm) {
+        height: auto;
+        width: $nav-item-size;
+        position: relative;
+    }
+
+    h1.title {
+        color: var(--base-color);
+        font-size: 18px;
+        display: none;
+        @media (min-width: $screen-sm) {
+            display: inline-block;
+        }
+    }
+}
+
+.page-nav-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+ul.page-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+li.page-nav-entry {
+    height: $nav-item-size;
+    width: $nav-item-size;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    margin: 0 calc(12.5% - #{$nav-item-size / 2});
+
+    @media (min-width: $screen-sm) {
+        margin: 0;
+    }
+
+    cursor: pointer;
+
+    .page-nav-link {
+        display: inline-block;
+        height: 100%;
+        opacity: 0.5;
+        transition: opacity 0.1s;
+        color: var(--base-color);
+        text-decoration: none;
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    span {
+        opacity: 0;
+        line-height: $nav-item-size;
+        text-transform: uppercase;
+        transition: opacity 0.1s;
+    }
+    svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        fill: var(--base-color);
+        display: inline-block;
+        overflow: visible;
+        transition: opacity 0.1s;
+    }
+    &:hover {
+        span {
+            opacity: 1;
+        }
+        svg {
+            opacity: 0;
+        }
+    }
+}
+.home .page-nav-link.home { opacity: 1; }
+.about .page-nav-link.about { opacity: 1; }
+.projects .page-nav-link.projects { opacity: 1; }
+.contact .page-nav-link.contact { opacity: 1; }
+
+ul.external-links {
+    display: none;
+    flex-grow: 0;
+
+    .page-nav-link {
+        opacity: 0.25;
+    }
+
+    @media (min-width: $screen-sm) {
+        display: inline-block;
+    }
+}
