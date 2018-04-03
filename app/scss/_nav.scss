@@ -25,6 +25,7 @@
         color: var(--base-color);
         font-size: 18px;
         display: none;
+        height: calc(#{$nav-item-size * 2} - 24px);
         @media (min-width: $screen-sm) {
             display: inline-block;
         }

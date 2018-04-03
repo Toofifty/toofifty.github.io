@@ -13,14 +13,31 @@
     top: 0;
     overflow-y: auto;
     height: calc(100% - #{$nav-item-size});
+    width: 100%;
     box-sizing: border-box;
     transition: 0.5s;
-    @media (min-width: $screen-md) {
+    @media (min-width: $screen-sm) {
         padding: 40px 60px;
         height: 100%;
     }
     p {
         font-family: $font-body;
+        font-size: 18px;
+    }
+    h1.title {
+        position: relative;
+        &:before {
+            content: '';
+            height: 100%;
+            width: 3px;
+            background: white;
+            position: absolute;
+            left: -14px;
+            transition: 1s;
+            top: 50%;
+            transform: translateY(-50%);
+            transition-delay: 1s;
+        }
     }
 }
 
@@ -38,6 +55,35 @@
     overflow: hidden;
     max-height: 0;
     top: -100vh;
+    h1.title:before {
+        height: 0;
+    }
+}
+
+.content.home {
+    display: flex;
+    align-items: center;
+}
+
+a.large {
+    color: white;
+    text-decoration: none;
+    font-family: $font-title;
+    font-size: 36px;
+}
+
+h1.site-title {
+    font-family: $font-subtitle;
+    font-size: 96px;
+    margin: 0;
+    font-weight: normal;
+}
+
+p.subtitle {
+    font-family: $font-subtitle;
+    font-size: 24px;
+    margin: 2px 0;
+    font-weight: normal;
 }
 
 @keyframes going-up {

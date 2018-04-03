@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -7,8 +11,10 @@ body {
 
     --base-color: #222;
 
-    background: var(--base-color);
+    background: #222;
     color: white;
+
+    -webkit-font-smoothing: antialiased;
 
     @media (min-width: $screen-sm) {
         display: flex;
@@ -33,4 +39,10 @@ body {
 h1.title {
     font-family: $font-title;
     text-transform: uppercase;
+    font-size: 36px;
+    font-weight: normal;
+    &.site-sub {
+        text-transform: none;
+        font-size: 24px;
+    }
 }

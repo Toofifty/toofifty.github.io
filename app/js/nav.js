@@ -10,9 +10,8 @@ const updateNav = page => {
     if (currentPage && currentPage !== page) {
         const divOut = document.querySelectorAll(`.content.${currentPage}`)[0]
         const divIn = document.querySelectorAll(`.content.${page}`)[0]
-        console.log(divOut, divIn)
         // unhide divIn
-        removeClass(divIn, 'hidden')
+        removeClass(divIn, /\s*hidden\s*/)
         const goingDown = divOut.getAttribute('data-index') > divIn.getAttribute('data-index')
         if (goingDown) {
             // go down
@@ -25,11 +24,11 @@ const updateNav = page => {
         }
         setTimeout(() => {
             if (goingDown) {
-                removeClass(divOut, 'going-down')
-                removeClass(divIn, 'coming-down')
+                removeClass(divOut, /\s*going-down\s*/)
+                removeClass(divIn, /\s*coming-down\s*/)
             } else {
-                removeClass(divOut, 'going-up')
-                removeClass(divIn, 'coming-up')
+                removeClass(divOut, /\s*going-up\s*/)
+                removeClass(divIn, /\s*coming-up\s*/)
             }
             divOut.className += ' hidden'
         }, 990)
@@ -38,5 +37,9 @@ const updateNav = page => {
 }
 
 updateNav()
+
+window.onpopstate = (event) => {
+    updateNav(event.path[0].location.pathname.replace(/\//g, ''))
+}
 
 export default updateNav

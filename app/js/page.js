@@ -1,5 +1,5 @@
 import updateNav from './nav'
-import updatePoly from './poly'
+import regeneratePoly from './poly'
 
 const VALID_PAGES = [
     '',
@@ -20,7 +20,7 @@ export default (path, forceUpdate) => {
     }
     if (path !== window.location.pathname.replace(/\//g, '')) {
         updateNav(page)
-        updatePoly()
+        regeneratePoly()
         window.history.pushState(page, page, '/' + page)
     }
     return false

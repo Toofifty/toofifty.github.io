@@ -1,6 +1,7 @@
 $screen-sm: 600px;
 $screen-md: 800px;
 $screen-lg: 1000px;
+$screen-xl: 1200px;
 
 $font-title: 'Abel', sans-serif;
 $font-subtitle: 'Gudea', sans-serif;
@@ -11,3 +12,4 @@ $nav-item-size: 70px;
 @import 'global';
 @import 'nav';
 @import 'content';
+@import 'projects';
