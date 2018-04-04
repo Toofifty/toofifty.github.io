@@ -1,9 +1,12 @@
-.project(style="background-image: url(" + require('../../img/thegreatsub.png') + ")")
+.project
+    picture.project-img
+        source(type="image/webp" srcset=require('../../img/webp/thegreatsub.webp'))
+        img(src=require('../../img/png/thegreatsub.png'))
     .project-content
         h1.project-title The Great Sub
         p Reddit Bot "top of all time" link collector
         .button-container
             a(href="https://www.reddit.com/r/thegreatsub/") Browse
             a(href="https://github.com/Toofifty/the-great-sub")
-                include ../../img/github.svg
+                include ../../img/svg/github.svg
                 | source

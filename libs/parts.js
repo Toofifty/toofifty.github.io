@@ -41,6 +41,10 @@ exports.loadFiles = function () {
           test: /\.js$/,
           exclude: /node_modules/,
           loader: 'babel-loader'
+        },
+        {
+          test: /\.webp$/,
+          loader: 'file-loader'
         }
       ]
     }

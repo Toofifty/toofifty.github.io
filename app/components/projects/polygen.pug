@@ -1,8 +1,11 @@
-.project(style="background-image: url(" + require('../../img/polygen.png') + ")")
+.project
+    picture.project-img
+        source(type="image/webp" srcset=require('../../img/webp/polygen.webp'))
+        img(src=require('../../img/png/polygen.png'))
     .project-content
         h1.project-title Polygen
         p Generate animatable polygons in a canvas
         .button-container
             a(href="https://github.com/toofifty/polygen")
-                include ../../img/github.svg
+                include ../../img/svg/github.svg
                 | source

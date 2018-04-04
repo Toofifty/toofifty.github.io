@@ -1,9 +1,12 @@
-.project(style="background-image: url(" + require('../../img/link-shortener.png') + ")")
+.project
+    picture.project-img
+        source(type="image/webp" srcset=require('../../img/webp/link-shortener.webp'))
+        img(src=require('../../img/png/link-shortener.png'))
     .project-content
         h1.project-title Link Shortener
         p Shortens links
         .button-container
             a(href="https://l.matho.me/") Try
             a(href="https://github.com/Toofifty/node-link-shortener")
-                include ../../img/github.svg
+                include ../../img/svg/github.svg
                 | source

@@ -6,26 +6,40 @@
 
 .projects-container {
     display: grid;
-    --cols: 2;
+    --cols: 1;
     --rows: 7;
-    --box-size: 200px;
+    --box-size: 250px;
     grid-template-columns: repeat(var(--cols), var(--box-size));
     grid-template-rows: repeat(var(--rows), var(--box-size));
-    grid-gap: 10px;
+    grid-gap: 2px;
     margin: auto;
-    width: 420px;
+    width: 250px;
     grid-template-areas:
-        "a b"
-        "c d"
-        "e d"
-        "g h"
-        "i j"
-        "k k"
-        "l f";
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "f"
+        "g"
+        "h"
+        "i"
+        "j"
+        "k"
+        "l";
     @media (min-width: $screen-sm) {
-        grid-gap: 20px;
+        // grid-gap: 20px;
         width: 100%;
         --box-size: 200px;
+        --cols: 2;
+        grid-template-areas:
+            "a b"
+            "c d"
+            "e d"
+            "g h"
+            "i j"
+            "k k"
+            "l f";
     }
     @media (min-width: $screen-md) {
         --cols: 3;
@@ -43,6 +57,12 @@
         --cols: 3;
         --rows: 5;
         --box-size: 250px;
+        grid-template-areas:
+            "a b c"
+            "a f f"
+            "e k i"
+            "j k l"
+            "d g h";
     }
     @media (min-width: $screen-xl) {
         --cols: 4;
@@ -53,6 +73,21 @@
             "f f k l"
             "e j c g";
     }
+    @media (min-width: 1400px) {
+        --cols: 5;
+        --rows: 3;
+        grid-template-areas:
+            "a a c d e"
+            "f g c j h"
+            "k g b l i";
+    }
+    @media (min-width: 1600px) {
+        --box-size: 300px;
+        grid-template-areas:
+            "a b h d e"
+            "f g c c e"
+            "f k i l j";
+    }
 }
 
 .project {
@@ -61,21 +96,7 @@
     height: 100%;
     width: 100%;
     position: relative;
-    background-position: center;
-    background-size: cover;
     filter: grayscale(100%);
-
-    &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.4;
-        background: black;
-        transition: 0.1s;
-    }
 
     &:hover {
         filter: grayscale(0);
@@ -88,8 +109,8 @@
                 opacity: 0.9;
             }
         }
-        &:before {
-            opacity: 0.6;
+        .project-img:before {
+            opacity: 0.7;
         }
     }
 
@@ -164,4 +185,29 @@
     &:nth-child(10) { grid-area: j; }
     &:nth-child(11) { grid-area: k; }
     &:nth-child(12) { grid-area: l; }
+}
+
+.project-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: black;
+        opacity: 0.3;
+        transition: 0.2s;
+    }
+}
+
+.project-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }

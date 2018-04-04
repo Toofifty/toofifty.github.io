@@ -1,8 +1,11 @@
-.project(style="background-image: url(" + require('../../img/matho-me.png') + ")")
+.project
+    picture.project-img
+        source(type="image/webp" srcset=require('../../img/webp/matho-me.webp'))
+        img(src=require('../../img/png/matho-me.png'))
     .project-content
         h1.project-title Matho.me
         p Personal portfolio website
         .button-container
             a(href="https://github.com/toofifty/toofifty.github.io")
-                include ../../img/github.svg
+                include ../../img/svg/github.svg
                 | source

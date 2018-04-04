@@ -1,9 +1,12 @@
-.project(style="background-image: url(" + require('../../img/history-server.png') + ")")
+.project
+    picture.project-img
+        source(type="image/webp" srcset=require('../../img/webp/history-server.webp'))
+        img(src=require('../../img/png/history-server.png'))
     .project-content
         h1.project-title Git History Webserver
         p See any version of a website using a Git hash
         .button-container
             a(href="http://history.matho.me/39e5de0c") Try
             a(href="https://github.com/Toofifty/history-server")
-                include ../../img/github.svg
+                include ../../img/svg/github.svg
                 | source

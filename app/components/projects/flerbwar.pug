@@ -1,9 +1,12 @@
-.project(style="background-image: url(" + require('../../img/flerbwar.png') + ")")
+.project
+    picture.project-img
+        source(type="image/webp" srcset=require('../../img/webp/flerbwar.webp'))
+        img(src=require('../../img/png/flerbwar.png'))
     .project-content
         h1.project-title Flerbwar
         p An agar.io clone
         .button-container
             a(href="http://flerbwar.matho.me/") Play
             a(href="https://github.com/toofifty/flerbwar")
-                include ../../img/github.svg
+                include ../../img/svg/github.svg
                 | source

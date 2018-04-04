@@ -1,25 +1,23 @@
 .navbar
-    a(href="/"): h1.title Matho
+    a(href="/" name="Home"): h1.title Matho
     .page-nav-container
         ul.page-nav
-            li.page-nav-entry: a.page-nav-link.home(onclick='goto("")')
+            li.page-nav-entry: a.page-nav-link.home(onclick='goto("")' href="javascript:;")
                 span Home
-                include ../img/home.svg
-            li.page-nav-entry: a.page-nav-link.about(onclick='goto("about")')
+                include ../img/svg/home.svg
+            li.page-nav-entry: a.page-nav-link.about(onclick='goto("about")' href="javascript:;")
                 span About
-                include ../img/about.svg
-            li.page-nav-entry: a.page-nav-link.projects(onclick='goto("projects")')
+                include ../img/svg/about.svg
+            li.page-nav-entry: a.page-nav-link.projects(onclick='goto("projects")' href="javascript:;")
                 span Projects
-                include ../img/projects.svg
-            li.page-nav-entry: a.page-nav-link.contact(onclick='goto("contact")')
+                include ../img/svg/projects.svg
+            li.page-nav-entry: a.page-nav-link.contact(onclick='goto("contact")' href="javascript:;")
                 span Contact
-                include ../img/contact.svg
+                include ../img/svg/contact.svg
     ul.page-nav.external-links
-        li.page-nav-entry.external-link: a.page-nav-link(href="https://github.com/Toofifty/" target="_blank")
+        li.page-nav-entry.external-link: a.page-nav-link(href="https://github.com/Toofifty/" target="_blank" rel="noopener")
             span Github
-            include ../img/github.svg
-        li.page-nav-entry.external-link: a.page-nav-link(href="https://www.linkedin.com/in/alex-matho/" target="_blank")
+            include ../img/svg/github.svg
+        li.page-nav-entry.external-link: a.page-nav-link(href="https://www.linkedin.com/in/alex-matho/" target="_blank" rel="noopener")
             span LinkedIn
-            include ../img/linkedin.svg
-
-            
+            include ../img/svg/linkedin.svg
