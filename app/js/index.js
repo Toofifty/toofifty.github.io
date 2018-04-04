@@ -1,5 +1,6 @@
 import goTo from './page'
 import regeneratePoly from './poly'
+import './scroll'
 
 goTo(window.location.pathname.replace(/\//g, ''), true)
 window.goto = goTo

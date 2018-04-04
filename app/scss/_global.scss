@@ -46,3 +46,34 @@ h1.title {
         font-size: 24px;
     }
 }
+
+.scroll-indicator {
+    position: fixed;
+    height: 50px;
+    right: 50px;
+    width: 4px;
+    background: var(--base-color);
+    opacity: 0;
+    border-radius: 4px;
+    transition: 0.5s;
+    &.down {
+        bottom: 20px;
+        .progress {
+            top: 0;
+        }
+    }
+    &.up {
+        top: 20px;
+        .progress {
+            bottom: 0;
+        }
+    }
+    .progress {
+        position: absolute;
+        background: white;
+        left: 0;
+        width: 4px;
+        border-radius: 4px;
+        transition: 0.1s linear;
+    }
+}

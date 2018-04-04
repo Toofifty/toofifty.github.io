@@ -1,3 +1,5 @@
+import attachScroller from './scroll'
+
 let currentPage = null
 
 const removeClass = (el, cls) => {
@@ -8,8 +10,8 @@ const updateNav = page => {
     page = page ? page : 'home'
     document.body.className = page
     if (currentPage && currentPage !== page) {
-        const divOut = document.querySelectorAll(`.content.${currentPage}`)[0]
-        const divIn = document.querySelectorAll(`.content.${page}`)[0]
+        const divOut = document.querySelector(`.content.${currentPage}`)
+        const divIn = document.querySelector(`.content.${page}`)
         // unhide divIn
         removeClass(divIn, /\s*hidden\s*/)
         const goingDown = divOut.getAttribute('data-index') > divIn.getAttribute('data-index')
@@ -31,12 +33,14 @@ const updateNav = page => {
                 removeClass(divIn, /\s*coming-up\s*/)
             }
             divOut.className += ' hidden'
+            attachScroller(divIn)
         }, 990)
     }
     currentPage = page
 }
 
 updateNav()
+attachScroller(document.querySelector('.content.home'))
 
 window.onpopstate = (event) => {
     updateNav(event.path[0].location.pathname.replace(/\//g, ''))
