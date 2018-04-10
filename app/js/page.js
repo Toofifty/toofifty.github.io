@@ -18,6 +18,16 @@ export default (path, forceUpdate) => {
     if (forceUpdate) {
         updateNav(page)
     }
+    if (page === 'projects') {
+        document.querySelectorAll('[data-srcset]').forEach(source => {
+            source.setAttribute('srcset', source.getAttribute('data-srcset'))
+            source.removeAttribute('data-src')
+        })
+        document.querySelectorAll('[data-src]').forEach(img => {
+            img.setAttribute('src', img.getAttribute('data-src'))
+            img.removeAttribute('data-src')
+        })
+    }
     if (path !== window.location.pathname.replace(/\//g, '')) {
         updateNav(page)
         regeneratePoly()

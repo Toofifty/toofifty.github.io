@@ -1,7 +1,7 @@
 .project
     picture.project-img
-        source(type="image/webp" srcset=require('../../img/webp/ascii-gen.webp'))
-        img(src=require('../../img/png/ascii-gen.png'))
+        source(type="image/webp" srcset='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=' data-srcset=require('../../img/webp/ascii-gen.webp'))
+        img(src='data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=' data-src=require('../../img/png/ascii-gen.png'))
     .project-content
         h1.project-title ASCII Generator
         p Generate text from an image
