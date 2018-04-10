@@ -11,8 +11,8 @@ const updateNav = page => {
     const noAnim = document.body.className.indexOf('no-anim') > -1
     document.body.className = page + (noAnim ? ' no-anim' : '')
     if (currentPage && currentPage !== page) {
-        const divOut = document.querySelector(`.content.${currentPage}`)
-        const divIn = document.querySelector(`.content.${page}`)
+        const divOut = document.querySelector(`.content-container.${currentPage}`)
+        const divIn = document.querySelector(`.content-container.${page}`)
         // unhide divIn
         removeClass(divIn, /\s*hidden\s*/)
         if (noAnim) {
@@ -47,7 +47,7 @@ const updateNav = page => {
 }
 
 updateNav()
-attachScroller(document.querySelector('.content.home'))
+attachScroller(document.querySelector('.content-container.home'))
 
 window.onpopstate = (event) => {
     updateNav(event.path[0].location.pathname.replace(/\//g, ''))

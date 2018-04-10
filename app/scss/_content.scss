@@ -6,53 +6,57 @@
     overflow: hidden;
 }
 
-.content {
-    padding: 40px 40px;
+.content-container {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     top: 0;
     overflow-y: auto;
     height: calc(100% - #{$nav-item-size});
     width: 100%;
     box-sizing: border-box;
     transition: 0.5s;
-    max-width: 1200px;
-    @media (min-width: $screen-sm) {
-        padding: 40px 60px;
-        height: 100%;
-    }
-    p {
-        font-family: $font-body;
-        font-size: 18px;
-    }
-    h1.title {
-        position: relative;
-        &:before {
-            content: '';
+    height: 100%;
+    .content {
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 40px 40px;
+        @media (min-width: $screen-sm) {
+            padding: 40px 60px;
             height: 100%;
-            width: 3px;
-            background: white;
-            position: absolute;
-            left: -14px;
-            transition: 1s;
-            top: 50%;
-            transform: translateY(-50%);
-            transition-delay: 1s;
+        }
+        p {
+            font-family: $font-body;
+            font-size: 18px;
+        }
+        h1.title {
+            position: relative;
+            &:before {
+                content: '';
+                height: 100%;
+                width: 3px;
+                background: white;
+                position: absolute;
+                left: -14px;
+                transition: 1s;
+                top: 50%;
+                transform: translateY(-50%);
+                transition-delay: 1s;
+            }
         }
     }
 }
 
-.content[class*="going"], .content[class*="coming"] {
+.content-container[class*="going"], .content-container[class*="coming"] {
     overflow: hidden;
 }
 
-.content.going-up { animation: going-up 1s; }
-.content.going-down { animation: going-down 1s; }
-.content.coming-up { animation: coming-up 1s; }
-.content.coming-down { animation: coming-down 1s; }
+.content-container.going-up { animation: going-up 1s; }
+.content-container.going-down { animation: going-down 1s; }
+.content-container.coming-up { animation: coming-up 1s; }
+.content-container.coming-down { animation: coming-down 1s; }
 
-.content.hidden {
+.content-container.hidden {
     opacity: 0;
     overflow: hidden;
     max-height: 0;
@@ -62,7 +66,7 @@
     }
 }
 
-.content.home {
+.home .content {
     display: flex;
     align-items: center;
 }

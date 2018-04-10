@@ -72,22 +72,6 @@
             "f f k l"
             "e j c g";
     }
-    @media (min-width: 1400px) {
-        --cols: 5;
-        --rows: 3;
-        --box-size: 240px;
-        grid-template-areas:
-            "a a c d e"
-            "f g c j h"
-            "k g b l i";
-    }
-    @media (min-width: 1600px) {
-        --box-size: 250px;
-        grid-template-areas:
-            "a b h d e"
-            "f g c c e"
-            "f k i l j";
-    }
 }
 
 .project {

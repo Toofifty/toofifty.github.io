@@ -23,4 +23,4 @@ const greetings = [
 ]
 const greeting = greetings[parseInt(Math.random() * greetings.length)]
 
-document.querySelector('.content.home .site-title span').textContent = greeting
+document.querySelector('.content-container.home .site-title span').textContent = greeting
