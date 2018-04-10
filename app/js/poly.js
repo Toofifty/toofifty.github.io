@@ -12,9 +12,11 @@ polygen(document.getElementById('polygen'), {
 document.body.style.setProperty('--base-color', `hsl(${hue}, 75%, 75%)`)
 
 export default () => {
-    const hue = Math.random() * 256
-    polygen(document.getElementById('polygen'), {
-        hue
-    })
-    document.body.style.setProperty('--base-color', `hsl(${hue}, 75%, 75%)`)
+    if (document.body.className.indexOf('no-anim') === -1) {
+        const hue = Math.random() * 256
+        polygen(document.getElementById('polygen'), {
+            hue
+        })
+        document.body.style.setProperty('--base-color', `hsl(${hue}, 75%, 75%)`)
+    }
 }

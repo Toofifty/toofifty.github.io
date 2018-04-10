@@ -11,7 +11,7 @@
     --box-size: 250px;
     grid-template-columns: repeat(var(--cols), var(--box-size));
     grid-template-rows: repeat(var(--rows), var(--box-size));
-    grid-gap: 2px;
+    grid-gap: 20px;
     margin: auto;
     width: 250px;
     grid-template-areas:
@@ -28,7 +28,6 @@
         "k"
         "l";
     @media (min-width: $screen-sm) {
-        // grid-gap: 20px;
         width: 100%;
         --box-size: 200px;
         --cols: 2;
@@ -56,7 +55,7 @@
     @media (min-width: $screen-lg) {
         --cols: 3;
         --rows: 5;
-        --box-size: 250px;
+        --box-size: 240px;
         grid-template-areas:
             "a b c"
             "a f f"
@@ -76,13 +75,14 @@
     @media (min-width: 1400px) {
         --cols: 5;
         --rows: 3;
+        --box-size: 240px;
         grid-template-areas:
             "a a c d e"
             "f g c j h"
             "k g b l i";
     }
     @media (min-width: 1600px) {
-        --box-size: 300px;
+        --box-size: 250px;
         grid-template-areas:
             "a b h d e"
             "f g c c e"
@@ -96,7 +96,7 @@
     height: 100%;
     width: 100%;
     position: relative;
-    filter: grayscale(100%);
+    // filter: grayscale(100%);
 
     &:hover {
         filter: grayscale(0);

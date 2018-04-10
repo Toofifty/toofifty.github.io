@@ -8,12 +8,19 @@ const removeClass = (el, cls) => {
 
 const updateNav = page => {
     page = page ? page : 'home'
-    document.body.className = page
+    const noAnim = document.body.className.indexOf('no-anim') > -1
+    document.body.className = page + (noAnim ? ' no-anim' : '')
     if (currentPage && currentPage !== page) {
         const divOut = document.querySelector(`.content.${currentPage}`)
         const divIn = document.querySelector(`.content.${page}`)
         // unhide divIn
         removeClass(divIn, /\s*hidden\s*/)
+        if (noAnim) {
+            divOut.className += ' hidden'
+            attachScroller(divIn)
+            currentPage = page
+            return
+        }
         const goingDown = divOut.getAttribute('data-index') > divIn.getAttribute('data-index')
         if (goingDown) {
             // go down

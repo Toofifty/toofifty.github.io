@@ -9,13 +9,15 @@
 .content {
     padding: 40px 40px;
     position: absolute;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     top: 0;
     overflow-y: auto;
     height: calc(100% - #{$nav-item-size});
     width: 100%;
     box-sizing: border-box;
     transition: 0.5s;
+    max-width: 1200px;
     @media (min-width: $screen-sm) {
         padding: 40px 60px;
         height: 100%;
